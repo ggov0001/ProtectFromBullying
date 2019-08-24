@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class StartPageActivity extends AppCompatActivity {
 
-    private static int timeOut = 4000;
+    private static int timeOut = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
