@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(MainActivity.this, ParentQuizActivity.class);
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Intent intent = new Intent(MainActivity.this, ParentQuizActivity.class);
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
     }
 

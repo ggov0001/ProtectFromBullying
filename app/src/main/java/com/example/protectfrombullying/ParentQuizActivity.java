@@ -1,5 +1,6 @@
 package com.example.protectfrombullying;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,16 +23,16 @@ public class ParentQuizActivity extends AppCompatActivity {
 
     //Quiz questions
     private String questionsForQuiz[] = {
-            "Is your kid's things often missing these days?",
-            "Is your kid's demands for money increasing and you have caught them stealing money from your wallets/cash lockers?",
-            "When asked about school, the answers aren't specific but just one word a reply like \'OK\', \'NO\' etc.?",
-            "Is your kid's sleep quality poor, he reports of frequent nightmares or is waking up in the middle of the night?",
+            "Is your kid losing his things these days?",
+            "Is your kid's demand for money increasing and you have caught them stealing money from your wallet/cash lockers?",
+            "When asked about school, the answers aren't specific but just one word replies like \'OK\', \'NO\' etc.?",
+            "Is your kid sleeping properly? Does he report frequent nightmares or is waking up in the middle of the night?",
             "Is your kid Fatigue, tired, shows no spirit?",
-            "How often does your kid get unexplained headache, stomachache, vomiting, poor appetite, body wasting?",
+            "How often does your kid suffer from unexplained headache, stomachache, vomiting, poor appetite, body wasting?",
             "How often is your kid inexplicably irritable?",
-            "Does your kid avoids showing his/her body to you?",
+            "Does your kid avoid showing his/her body to you?",
             "Is your kid washing his clothes, shoes without your knowledge?",
-            "Is your kid's grades falling?"
+            "Is your kid's academic performance degrading drastically?"
     };
 
     private int questionNumber = 0;
@@ -56,6 +57,8 @@ public class ParentQuizActivity extends AppCompatActivity {
         final TextView score = (TextView) findViewById(R.id.textView_score);
 
 
+        final Intent sendQuizResult = new Intent(ParentQuizActivity.this, QuizResultActivity.class);
+
 
         if(questionNumber == 0)
         {
@@ -76,6 +79,8 @@ public class ParentQuizActivity extends AppCompatActivity {
                 {
                     scoreForTheQuiz += 0;
                     score.setText(scoreForTheQuiz + "%");
+                    sendQuizResult.putExtra("Result", scoreForTheQuiz);
+                    startActivity(sendQuizResult);
                 }
             }
         });
@@ -94,6 +99,8 @@ public class ParentQuizActivity extends AppCompatActivity {
                 {
                     scoreForTheQuiz += 2.5;
                     score.setText(scoreForTheQuiz + "%");
+                    sendQuizResult.putExtra("Result", scoreForTheQuiz);
+                    startActivity(sendQuizResult);
                 }
             }
         });
@@ -112,6 +119,9 @@ public class ParentQuizActivity extends AppCompatActivity {
                 {
                     scoreForTheQuiz += 5;
                     score.setText(scoreForTheQuiz + "%");
+
+                    sendQuizResult.putExtra("Result", scoreForTheQuiz);
+                    startActivity(sendQuizResult);
                 }
             }
         });
@@ -130,6 +140,8 @@ public class ParentQuizActivity extends AppCompatActivity {
                 {
                     scoreForTheQuiz += 7.5;
                     score.setText(scoreForTheQuiz + "%");
+                    sendQuizResult.putExtra("Result", scoreForTheQuiz);
+                    startActivity(sendQuizResult);
                 }
             }
         });
@@ -148,6 +160,8 @@ public class ParentQuizActivity extends AppCompatActivity {
                 {
                     scoreForTheQuiz += 10;
                     score.setText(scoreForTheQuiz + "%");
+                    sendQuizResult.putExtra("Result", scoreForTheQuiz);
+                    startActivity(sendQuizResult);
                 }
             }
         });

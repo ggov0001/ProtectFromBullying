@@ -9,7 +9,7 @@ tools:context=".ParentQuizActivity">
 
     <ImageView
         android:id="@+id/imageView_quizBackground"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         app:srcCompat="@color/colorPrimary"
         tools:layout_editor_absoluteX="0dp"
@@ -52,11 +52,12 @@ tools:context=".ParentQuizActivity">
 
     <Button
         android:id="@+id/button_never"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/imageView_quizBackground"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/custom_button_quiz"
         android:text="NEVER"
         android:typeface="normal"
@@ -68,7 +69,7 @@ tools:context=".ParentQuizActivity">
         android:layout_height="50dp"
         android:text="RARELY"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/button_never"
         android:background="@drawable/custom_button_quiz"
         android:typeface="normal"
@@ -81,7 +82,7 @@ tools:context=".ParentQuizActivity">
         android:text="SOMETIMES"
         android:background="@drawable/custom_button_quiz"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/button_rarely"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"/>
@@ -93,7 +94,7 @@ tools:context=".ParentQuizActivity">
         android:text="OFTEN"
         android:background="@drawable/custom_button_quiz"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/button_sometimes"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"/>
@@ -105,7 +106,7 @@ tools:context=".ParentQuizActivity">
         android:text="VERY OFTEN"
         android:background="@drawable/custom_button_quiz"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="56dp"
         android:layout_below="@+id/button_often"
         android:typeface="normal"
@@ -119,27 +120,6 @@ tools:context=".ParentQuizActivity">
         android:layout_marginLeft="55dp"
         android:layout_below="@+id/button_veryoften" />
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
 
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation" />
-
-    </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>
