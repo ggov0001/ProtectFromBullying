@@ -3,4 +3,21 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="awareness_1">Maintaining good communication is the most effeective way to protect your kid.</string>
+    <string name="awareness_2">Pay attention to changes in your child’s behavior</string>
+    <string name="awareness_3">Make it rewarding for children to develop the habit of telling you about what happens at school each day.</string>
+    <string name="awareness_4">Start from asking specific questions in a cheerful way that goes beyond: “How was school today?”</string>
+    <string name="awareness_5">Tell children clearly,and often, “You have the right to feel safe and respected at school and the responsibility to act safely, respectfully towards others.</string>
+
+    <string name="wholestory_1">Stay Calm</string>
+    <string name="wholestory_2">If you are upset, your children would be upset too. They would try to protect you by not telling the problems In their life</string>
+    <string name="wholestory_3">Start with asking a couple of specific questions each day with curiosity rather than anxiety</string>
+    <string name="wholestory_4">Questions like:  “What games did you play at recess? Did the class guinea pig do anything silly?”</string>
+    <string name="wholestory_5">And then question like:  “Do you have any interesting stories to tell me about what people said or did?”</string>
+    <string name="wholestory_6">Keep going deeper on very question you ask</string>
+    <string name="wholestory_7">Questions like this helps:  “I saw this happen/heard about this happening. It looked/sounded like it might be unpleasant for you. Can you tell me more about it?”</string>
+    <string name="wholestory_8">Stay respectful, loving, and peaceful when you listen to their answers</string>
+    <string name="wholestory_9">Instead of jumping to conclusions or making assumptions, take time to get the whole story</string>
+    <string name="wholestory_10">Ask questions to your child in a calm, reassuring way and listen to the answers</string>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +13,12 @@
         android:layout_height="250dp"
         app:srcCompat="@color/colorPrimary"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-9dp" />
+        tools:layout_editor_absoluteY="-9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0001"/>
 
     <TextView
         android:id="@+id/textView_quizPercentage"
@@ -28,115 +33,142 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="60dp" />
+        tools:layout_editor_absoluteY="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        app:layout_constraintHorizontal_bias="0.01"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="260dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="290dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp">
-
-                <ScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/imageView_recommendQuiz"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/iconquiz" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_toRightOf="@id/imageView_recommendQuiz"
-                            android:text="Result and Recommendation"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:typeface="normal"
-                            app:fontFamily="sans-serif-medium" />
-
-                        <TextView
-                            android:id="@+id/textView_suggestionBullied"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageView_recommendQuiz"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Bully Chances: "
-                            android:textSize="20dp"
-                            android:typeface="normal"
-                            app:fontFamily="sans-serif-medium" />
-
-                        <TextView
-                            android:id="@+id/textView_quizSeverity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageView_recommendQuiz"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_toRightOf="@+id/textView_suggestionBullied"
-                            android:text="LITTLE"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:id="@+id/imageView_warningImage"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_toRightOf="@+id/textView_quizSeverity"
-                            android:layout_below="@+id/imageView_recommendQuiz"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"/>
-
-                        <TextView
-                            android:id="@+id/textView_quizSuggestion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/textView_suggestionBullied"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:lineSpacingExtra="10sp"
-                            android:text="sample"
-                            android:textSize="15dp"
-                            android:typeface="normal"
-                            app:fontFamily="sans-serif-medium" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
 
-                    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
-                </ScrollView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp">
+
+                    <ScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageView_recommendQuiz"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/iconquiz" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_toRightOf="@id/imageView_recommendQuiz"
+                                android:text="Result and Recommendation"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:typeface="normal"
+                                app:fontFamily="sans-serif-medium" />
+
+                            <TextView
+                                android:id="@+id/textView_suggestionBullied"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageView_recommendQuiz"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Bully Chances: "
+                                android:textSize="20dp"
+                                android:typeface="normal"
+                                app:fontFamily="sans-serif-medium" />
+
+                            <TextView
+                                android:id="@+id/textView_quizSeverity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageView_recommendQuiz"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_toRightOf="@+id/textView_suggestionBullied"
+                                android:text="LITTLE"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imageView_warningImage"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_toRightOf="@+id/textView_quizSeverity"
+                                android:layout_below="@+id/imageView_recommendQuiz"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="15dp"/>
+
+                            <TextView
+                                android:id="@+id/textView_quizSuggestion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView_suggestionBullied"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:lineSpacingExtra="10sp"
+                                android:text="sample"
+                                android:textSize="15dp"
+                                android:typeface="normal"
+                                app:fontFamily="sans-serif-medium" />
 
 
-            </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+
+                    </ScrollView>
+
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
 
         </LinearLayout>
+    </RelativeLayout>
 
-    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

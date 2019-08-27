@@ -1,5 +1,6 @@
 package com.example.protectfrombullying;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,13 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class ParentTalkActivity extends AppCompatActivity {
 
-    //Declare all buttons in the home screen
-    private Button quizButton;
-    private Button waysToTackleButton;
-    private Button talkToKidsButton;
-    private Button generalInformationButton;
+    private Button awarenessButton;
+    private Button wholeStoryButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -24,15 +22,15 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(ParentTalkActivity.this, HomeActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(HomeActivity.this, DummyActivity.class);
+                    Intent dashboardIntent = new Intent(ParentTalkActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
                     return true;
                 case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(HomeActivity.this, DummyActivity.class);
+                    Intent notificationIntent = new Intent(ParentTalkActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
                     return true;
             }
@@ -40,47 +38,30 @@ public class HomeActivity extends AppCompatActivity {
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-        quizButton = (Button) findViewById(R.id.button_iconQuiz);
-        waysToTackleButton = (Button) findViewById(R.id.button_iconTackle);
-        talkToKidsButton = (Button) findViewById(R.id.button_iconTalkToKids);
-        generalInformationButton = (Button) findViewById(R.id.button_iconGeneral);
+        setContentView(R.layout.activity_parent_talk);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        quizButton.setOnClickListener(new View.OnClickListener() {
+        awarenessButton = (Button) findViewById(R.id.button_awareness);
+        wholeStoryButton = (Button) findViewById(R.id.button_wholestory);
+
+        awarenessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ParentQuizActivity.class);
+                Intent intent = new Intent(ParentTalkActivity.this, AwarenessActivity.class);
                 startActivity(intent);
             }
         });
 
-        waysToTackleButton.setOnClickListener(new View.OnClickListener() {
+        wholeStoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-
-        talkToKidsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);
+                Intent intent = new Intent(ParentTalkActivity.this, WholeStoryActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        generalInformationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
     }

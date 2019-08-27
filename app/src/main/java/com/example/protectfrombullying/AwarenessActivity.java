@@ -1,17 +1,13 @@
 package com.example.protectfrombullying;
 
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
+public class AwarenessActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -20,15 +16,15 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(AwarenessActivity.this, HomeActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(MainActivity.this, DummyActivity.class);
+                    Intent dashboardIntent = new Intent(AwarenessActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
                     return true;
                 case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(MainActivity.this, DummyActivity.class);
+                    Intent notificationIntent = new Intent(AwarenessActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
                     return true;
             }
@@ -39,14 +35,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_awareness);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-        startActivity(intent);
     }
-
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-
+    tools:context=".WaysToTackleActivity">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -17,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.364">
-        
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -32,12 +31,28 @@
                     android:layout_height="255dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/dashboardparent">
+                    android:background="@drawable/parenttalk">
 
-                    <ImageView
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:gravity="center"
+                        android:text="WAYS TO TACKLE"
+                        android:textColor="#ffff"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        app:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="Follow these simple things."
+                        android:textColor="#ffff"
+                        android:textSize="20dp"
+                        android:typeface="normal"
+                        app:fontFamily="sans-serif-light" />
 
                 </LinearLayout>
 
@@ -45,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="185dp"
+                    android:layout_marginTop="255dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 
@@ -62,37 +77,31 @@
                             android:orientation="vertical"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp">
-                            
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <ImageView
-                                    android:id="@+id/imageView_iconQuiz"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/iconquiz"
-                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Bully Identification Quiz"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageView_iconQuiz"
+                                    android:text="Stay Calm and Positive"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="35dp"
                                     android:layout_marginBottom="10dp"
                                     />
-                                
+
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_iconQuiz"
+                                    android:id="@+id/button_waysToTackle1"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
-                            
+
                         </android.support.v7.widget.CardView>
                         <android.support.v7.widget.CardView
                             android:layout_width="0dp"
@@ -106,28 +115,22 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <ImageView
-                                    android:id="@+id/imageView_iconTackle"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/iconstackle"
-                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Ways To Tackle"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageView_iconTackle"
+                                    android:text="Waht not to Advice?"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="50dp"
                                     android:layout_marginBottom="10dp"
                                     />
 
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_iconTackle"
+                                    android:id="@+id/button_waysToTackle2"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -152,21 +155,87 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <ImageView
-                                    android:id="@+id/imageView_iconTalkToKids"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/iconcommunicate"
-                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Talk to Kids"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageView_iconTalkToKids"
+                                    android:text="Discuss strategies for face to face bullying"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="25dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/button_waysToTackle3"
+                                    android:background="@android:color/transparent"/>
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Discuss strategies for online bullying"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="35dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/button_waysToTackle4"
+                                    android:background="@android:color/transparent"/>
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Report the bullying to the school"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="35dp"
                                     android:layout_marginBottom="10dp"
                                     />
 
@@ -191,21 +260,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <ImageView
-                                    android:id="@+id/imageView_iconGeneral"
-                                    android:layout_width="50dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/iconstackle"
-                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Law"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageView_iconGeneral"
+                                    android:text="Seek Help"
+                                    android:textSize="20dp"
+                                    android:gravity="center"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="50dp"
                                     android:layout_marginBottom="10dp"
                                     />
 
