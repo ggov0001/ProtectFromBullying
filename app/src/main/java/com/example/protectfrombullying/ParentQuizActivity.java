@@ -53,9 +53,6 @@ public class ParentQuizActivity extends AppCompatActivity {
         often = (Button) findViewById(R.id.button_often);
         veryoften = (Button) findViewById(R.id.button_veryoften);
 
-        //DUMMY DELETE
-        final TextView score = (TextView) findViewById(R.id.textView_score);
-
 
         final Intent sendQuizResult = new Intent(ParentQuizActivity.this, QuizResultActivity.class);
 
@@ -78,7 +75,6 @@ public class ParentQuizActivity extends AppCompatActivity {
                 else
                 {
                     scoreForTheQuiz += 0;
-                    score.setText(scoreForTheQuiz + "%");
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
                 }
@@ -98,7 +94,6 @@ public class ParentQuizActivity extends AppCompatActivity {
                 else
                 {
                     scoreForTheQuiz += 2.5;
-                    score.setText(scoreForTheQuiz + "%");
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
                 }
@@ -118,8 +113,6 @@ public class ParentQuizActivity extends AppCompatActivity {
                 else
                 {
                     scoreForTheQuiz += 5;
-                    score.setText(scoreForTheQuiz + "%");
-
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
                 }
@@ -139,7 +132,6 @@ public class ParentQuizActivity extends AppCompatActivity {
                 else
                 {
                     scoreForTheQuiz += 7.5;
-                    score.setText(scoreForTheQuiz + "%");
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
                 }
@@ -159,7 +151,6 @@ public class ParentQuizActivity extends AppCompatActivity {
                 else
                 {
                     scoreForTheQuiz += 10;
-                    score.setText(scoreForTheQuiz + "%");
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
                 }
