@@ -8,6 +8,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,8 @@ public class QuizResultActivity extends AppCompatActivity {
     private TextView quizSuggestion;
 
     private ImageView warningImage;
+    private Button waysToTackleButton;
+    private Button communicateWithKids;
 
     //For suggestion
     private StringBuilder suggestion;
@@ -50,6 +54,11 @@ public class QuizResultActivity extends AppCompatActivity {
     };
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(QuizResultActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +73,9 @@ public class QuizResultActivity extends AppCompatActivity {
         bullySeverity = (TextView) findViewById(R.id.textView_quizSeverity);
         quizSuggestion = (TextView) findViewById(R.id.textView_quizSuggestion);
         warningImage = (ImageView) findViewById(R.id.imageView_warningImage);
+
+        waysToTackleButton = (Button) findViewById(R.id.button_iconwaystotackle);
+        communicateWithKids = (Button) findViewById(R.id.button_iconCommunicateWithKids);
 
         Intent intent = getIntent();
         Float scoreForTheQuiz = intent.getFloatExtra("Result",0);
@@ -135,5 +147,21 @@ public class QuizResultActivity extends AppCompatActivity {
             suggestion.append("3. If you feel hard try to talk to your kids' school, friends.");
             quizSuggestion.setText(suggestion.toString());
         }
+
+        waysToTackleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizResultActivity.this, WaysToTackleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        communicateWithKids.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizResultActivity.this, ParentTalkActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

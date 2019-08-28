@@ -6,13 +6,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class WaysToTackleActivity extends AppCompatActivity {
+public class GeneralInformationActivity extends AppCompatActivity {
 
-    private Button generalInformation;
-    private Button legalHelp;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -21,15 +17,15 @@ public class WaysToTackleActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(WaysToTackleActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(GeneralInformationActivity.this, HomeActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(WaysToTackleActivity.this, DummyActivity.class);
+                    Intent dashboardIntent = new Intent(GeneralInformationActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
                     return true;
                 case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(WaysToTackleActivity.this, DummyActivity.class);
+                    Intent notificationIntent = new Intent(GeneralInformationActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
                     return true;
             }
@@ -40,31 +36,9 @@ public class WaysToTackleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ways_to_tackle);
+        setContentView(R.layout.activity_general_information);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        generalInformation = (Button) findViewById(R.id.button_generalInformation);
-        legalHelp = (Button) findViewById(R.id.button_legalHelp);
-
-
-        generalInformation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WaysToTackleActivity.this, GeneralInformationActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        legalHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WaysToTackleActivity.this, LegalHelpActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
 }

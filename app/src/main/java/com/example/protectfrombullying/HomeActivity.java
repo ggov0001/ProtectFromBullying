@@ -65,7 +65,8 @@ public class HomeActivity extends AppCompatActivity {
         waysToTackleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivity.this, WaysToTackleActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -20,4 +20,26 @@
     <string name="wholestory_8">Stay respectful, loving, and peaceful when you listen to their answers</string>
     <string name="wholestory_9">Instead of jumping to conclusions or making assumptions, take time to get the whole story</string>
     <string name="wholestory_10">Ask questions to your child in a calm, reassuring way and listen to the answers</string>
+
+    <string name="waystotackle_1">Stay Calm</string>
+    <string name="waystotackle_2">What not to Advice?</string>
+    <string name="waystotackle_3">Discuss strategies for face to face bullying</string>
+    <string name="waystotackle_4">Discuss strategies for online bullying</string>
+    <string name="waystotackle_5">Report the bullying to the school</string>
+    <string name="waystotackle_6">Seek Help</string>
+
+    <string name="waystotackle_11">Focus on identifying a solution with your child. Your attitude will influence your child. A confident, positive and resilient attitude can help to stop bullying from continuing</string>
+    <string name="waystotackle_22">Fighting with the other child (as distinct from defending themselves from a physical attack) can escalate the situation, and your child may be reprimanded for their part in a fight.</string>
+    <string name="waystotackle_33">Ignoring the person doing the bullying, telling them to stop and then walking away, pretending you dont care; act unimpressed or not bothered, go somewhere safe.</string>
+    <string name="waystotackle_44">Not to respond to the message or image, save the evidence, block or delete the sender, report the situation to the Internet Service Provider or phone service provider; they can help you block messages or calls, to tell other people—teachers and police if necessary</string>
+    <string name="waystotackle_55">Encourage your child to talk to the teacher or other staff, e.g. school guidance officer. Let them know that you will also report it to the school if the bullying doesnt stop after your child tries the strategies</string>
+    <string name="waystotackle_66">Discuss with the school ways to help your child (and other students) to learn about problem solving, conflict resolution, social skills, developing resilience, dealing with strong emotions, handling difficult situations and people.</string>
+
+    <string name="law_1">Race</string>
+    <string name="law_2">Disability</string>
+    <string name="law_3">Sex</string>
+
+    <string name="law_11">The Racial Discrimination Act 1975 (Cth) (the RDA) makes it against the law to treat you unfairly because of your race, colour, descent, national or ethnic origin or immigrant status. The RDA also makes racial hatred against the law.You can use the RDA to get fair treatment in many areas of public life such as: Education – enrolling or studying in a course at a private or public school, college or university.</string>
+    <string name="law_22">The Disability Discrimination Act 1992 (Cth) (the DDA) makes it against the law to treat you unfairly because of your disability. You are also covered if you had a disability in the past, may develop a disability in the future or if people think you have a disability. People who are relatives, friends and carers of people with a disability are also protected by the DDA. You can use the DDA to get fair treatment in many areas of public life such as in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
+    <string name="law_33">The Sex Discrimination Act 1984 (Cth) (the SDA) makes it against the law to treat you unfairly because of your: sex; gender identity; intersex status; sexual orientation; marital or relationship status (including same-sex de facto couples); family responsibilities; because you are pregnant or might become pregnant; because you are breastfeeding. The SDA also makes sexual harassment against the law. You can use the SDA to get fair treatment in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
 </resources>
