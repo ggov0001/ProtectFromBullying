@@ -23,14 +23,14 @@
     <TextView
         android:id="@+id/textView_quizPercentage"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="50dp"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"
         android:textColor="#ffff"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="60dp"
@@ -41,36 +41,57 @@
         app:layout_constraintVertical_bias="0.001"
         app:layout_constraintHorizontal_bias="0.01"/>
 
+    <Button
+        android:id="@+id/button_retakeQuiz"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/custom_button_quiz"
+        android:textColor="#ffff"
+        android:gravity="center"
+        android:text="Re-Take Quiz"
+        android:typeface="normal"
+        app:fontFamily="sans-serif-medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364">
+        app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="260dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp">
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <ScrollView
                         android:layout_width="wrap_content"
@@ -128,10 +149,10 @@
                                 android:id="@+id/imageView_warningImage"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_toRightOf="@+id/textView_quizSeverity"
                                 android:layout_below="@+id/imageView_recommendQuiz"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginTop="15dp"/>
+                                android:layout_marginTop="15dp"
+                                android:layout_toRightOf="@+id/textView_quizSeverity" />
 
                             <TextView
                                 android:id="@+id/textView_quizSuggestion"
@@ -161,24 +182,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="570dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginTop="570dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp">
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -188,36 +209,36 @@
                             android:id="@+id/imageView_iconTalkToKids"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/iconcommunicate"
-                            android:layout_centerInParent="true"/>
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/iconcommunicate" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Communicate with Kids"
-                            android:textSize="16sp"
                             android:layout_below="@+id/imageView_iconTalkToKids"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            />
+                            android:text="Communicate with Kids"
+                            android:textSize="16sp" />
 
                         <Button
+                            android:id="@+id/button_iconCommunicateWithKids"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/button_iconCommunicateWithKids"
-                            android:background="@drawable/custom_button_cards"/>
+                            android:background="@drawable/custom_button_cards" />
 
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="5dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -227,25 +248,24 @@
                             android:id="@+id/imageView_iconGeneral"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/iconstackle"
-                            android:layout_centerInParent="true"/>
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/iconstackle" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ways to Tackle"
-                            android:textSize="16sp"
                             android:layout_below="@+id/imageView_iconGeneral"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            />
+                            android:text="Ways to Tackle"
+                            android:textSize="16sp" />
 
                         <Button
+                            android:id="@+id/button_iconwaystotackle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/button_iconwaystotackle"
-                            android:background="@drawable/custom_button_cards"/>
+                            android:background="@drawable/custom_button_cards" />
 
                     </RelativeLayout>
 
@@ -253,6 +273,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
 
     </RelativeLayout>
 

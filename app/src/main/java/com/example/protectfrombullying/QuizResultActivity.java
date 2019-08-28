@@ -25,6 +25,7 @@ public class QuizResultActivity extends AppCompatActivity {
     private ImageView warningImage;
     private Button waysToTackleButton;
     private Button communicateWithKids;
+    private Button retakeQuiz;
 
     //For suggestion
     private StringBuilder suggestion;
@@ -76,6 +77,7 @@ public class QuizResultActivity extends AppCompatActivity {
 
         waysToTackleButton = (Button) findViewById(R.id.button_iconwaystotackle);
         communicateWithKids = (Button) findViewById(R.id.button_iconCommunicateWithKids);
+        retakeQuiz = (Button) findViewById(R.id.button_retakeQuiz);
 
         Intent intent = getIntent();
         Float scoreForTheQuiz = intent.getFloatExtra("Result",0);
@@ -160,6 +162,14 @@ public class QuizResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QuizResultActivity.this, ParentTalkActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        retakeQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizResultActivity.this, ParentQuizActivity.class);
                 startActivity(intent);
             }
         });
