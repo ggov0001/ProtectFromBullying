@@ -36,8 +36,8 @@ public class UserTypeActivity extends AppCompatActivity {
         imageView_Student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserTypeActivity.this, MainActivity.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(UserTypeActivity.this, MainActivity.class);
+              //  startActivity(intent);
             }
         });
 

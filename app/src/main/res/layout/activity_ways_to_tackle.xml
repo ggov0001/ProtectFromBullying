@@ -98,7 +98,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/button_generalInformation"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
@@ -138,7 +138,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/button_legalHelp"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 

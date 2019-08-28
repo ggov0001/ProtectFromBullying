@@ -15,7 +15,6 @@ public class HomeActivity extends AppCompatActivity {
     private Button quizButton;
     private Button waysToTackleButton;
     private Button talkToKidsButton;
-    private Button generalInformationButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
         quizButton = (Button) findViewById(R.id.button_iconQuiz);
         waysToTackleButton = (Button) findViewById(R.id.button_iconTackle);
         talkToKidsButton = (Button) findViewById(R.id.button_iconTalkToKids);
-        generalInformationButton = (Button) findViewById(R.id.button_iconGeneral);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -78,11 +76,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        generalInformationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 }

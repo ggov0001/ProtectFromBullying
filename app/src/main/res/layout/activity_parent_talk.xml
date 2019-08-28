@@ -39,7 +39,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:gravity="center"
-                        android:text="HOW TO TALK TO YOUR KIDS?"
+                        android:text="TALK TO YOUR KIDS"
                         android:textColor="#ffff"
                         android:textSize="25dp"
                         android:textStyle="bold"
@@ -104,7 +104,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/button_awareness"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
@@ -147,7 +147,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/button_wholestory"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
