@@ -158,6 +158,7 @@ public class QuizResultActivity extends AppCompatActivity {
             }
         });
 
+
         communicateWithKids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

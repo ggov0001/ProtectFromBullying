@@ -7,6 +7,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ParentQuizActivity">
 
+
     <ImageView
         android:id="@+id/imageView_quizBackground"
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@ tools:context=".ParentQuizActivity">
         android:layout_marginTop="30dp"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="60dp" />
+
 
     <TextView
         android:id="@+id/textView_numberAnswered"
@@ -115,7 +117,6 @@ tools:context=".ParentQuizActivity">
         android:layout_below="@+id/button_often"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"/>
-
 
 
 </RelativeLayout>
