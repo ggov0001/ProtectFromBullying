@@ -46,6 +46,7 @@ public class ParentTalkActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //Button initialize
         awarenessButton = (Button) findViewById(R.id.button_awareness);
         wholeStoryButton = (Button) findViewById(R.id.button_wholestory);
 

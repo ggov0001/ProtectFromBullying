@@ -118,5 +118,4 @@ tools:context=".ParentQuizActivity">
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"/>
 
-
 </RelativeLayout>

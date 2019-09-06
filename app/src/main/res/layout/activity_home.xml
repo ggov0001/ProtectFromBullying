@@ -107,18 +107,18 @@
                                 android:layout_height="match_parent">
 
                                 <ImageView
-                                    android:id="@+id/imageView_iconTalkToKids"
+                                    android:id="@+id/imageView_iconKids"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconcommunicate"
+                                    android:src="@drawable/iconboy"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Talk to Kids"
+                                    android:text="Your Kids"
                                     android:textSize="16sp"
-                                    android:layout_below="@+id/imageView_iconTalkToKids"
+                                    android:layout_below="@+id/imageView_iconKids"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
@@ -127,12 +127,13 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_iconTalkToKids"
+                                    android:id="@+id/button_iconKids"
                                     android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
                         </android.support.v7.widget.CardView>
+
 
                     </LinearLayout>
                     <LinearLayout
@@ -180,7 +181,45 @@
                             </RelativeLayout>
 
                         </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp">
 
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView_iconTalkToKids"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/iconcommunicate"
+                                    android:layout_centerInParent="true"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Talk to Kids"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageView_iconTalkToKids"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/button_iconTalkToKids"
+                                    android:background="@drawable/custom_button_cards"/>
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
                     </LinearLayout>
 
                 </LinearLayout>

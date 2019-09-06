@@ -1,5 +1,6 @@
 package com.example.protectfrombullying;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button quizButton;
     private Button waysToTackleButton;
     private Button talkToKidsButton;
+    private Button yourKids;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,16 +41,25 @@ public class HomeActivity extends AppCompatActivity {
         }
     };
 
+    //Back
+    @SuppressLint("NewApi")
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        //Initialize
         quizButton = (Button) findViewById(R.id.button_iconQuiz);
         waysToTackleButton = (Button) findViewById(R.id.button_iconTackle);
         talkToKidsButton = (Button) findViewById(R.id.button_iconTalkToKids);
+        yourKids = (Button) findViewById(R.id.button_iconKids);
 
+        //Bottom navigation
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -69,6 +80,14 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         talkToKidsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        yourKids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);

@@ -55,6 +55,7 @@ public class QuizResultActivity extends AppCompatActivity {
     };
 
 
+    //Back
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(QuizResultActivity.this, HomeActivity.class);
@@ -79,10 +80,12 @@ public class QuizResultActivity extends AppCompatActivity {
         communicateWithKids = (Button) findViewById(R.id.button_iconCommunicateWithKids);
         retakeQuiz = (Button) findViewById(R.id.button_retakeQuiz);
 
+        //Get the score from ParentQuizActivity
         Intent intent = getIntent();
         Float scoreForTheQuiz = intent.getFloatExtra("Result",0);
         percentageTextView.setText(scoreForTheQuiz + "%");
 
+        //Logic
         if(scoreForTheQuiz == 0.0)
         {
             bullySeverity.setText("NO");
