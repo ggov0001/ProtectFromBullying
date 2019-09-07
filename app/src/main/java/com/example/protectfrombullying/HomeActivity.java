@@ -90,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         yourKids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);
+                Intent intent = new Intent(HomeActivity.this, YourKidsActivity.class);
                 startActivity(intent);
             }
         });

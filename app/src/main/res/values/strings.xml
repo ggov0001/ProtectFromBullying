@@ -42,4 +42,10 @@
     <string name="law_11">The Racial Discrimination Act 1975 (Cth) (the RDA) makes it against the law to treat you unfairly because of your race, colour, descent, national or ethnic origin or immigrant status. The RDA also makes racial hatred against the law.You can use the RDA to get fair treatment in many areas of public life such as: Education – enrolling or studying in a course at a private or public school, college or university.</string>
     <string name="law_22">The Disability Discrimination Act 1992 (Cth) (the DDA) makes it against the law to treat you unfairly because of your disability. You are also covered if you had a disability in the past, may develop a disability in the future or if people think you have a disability. People who are relatives, friends and carers of people with a disability are also protected by the DDA. You can use the DDA to get fair treatment in many areas of public life such as in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
     <string name="law_33">The Sex Discrimination Act 1984 (Cth) (the SDA) makes it against the law to treat you unfairly because of your: sex; gender identity; intersex status; sexual orientation; marital or relationship status (including same-sex de facto couples); family responsibilities; because you are pregnant or might become pregnant; because you are breastfeeding. The SDA also makes sexual harassment against the law. You can use the SDA to get fair treatment in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
+    <string name="title_activity_your_kids">YourKidsActivity</string>
+
+    <string name="addkidsprocedure1">* Enter the first name of your kid.</string>
+    <string name="addkidsprocedure2">* Click on "Generate" to generate the QR code.</string>
+    <string name="addkidsprocedure3">* The QR code contains the kid name and a unique identifier.</string>
+    <string name="addkidsprocedure4">* Scan the QR code in your kids phone once the app is installed.</string>
 </resources>
