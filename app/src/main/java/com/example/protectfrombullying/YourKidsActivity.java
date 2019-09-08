@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +32,8 @@ public class YourKidsActivity extends AppCompatActivity {
     List<Kids> kidsList;
     List<Kids> allRecords;
 
-    //Kids upon select and Ok button in the dialog box
-    private Button okDialogBox;
-    private Button kidsButton;
-    private ImageView qrCode;
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -68,18 +68,10 @@ public class YourKidsActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         database = Room.databaseBuilder(getApplicationContext(), KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
-        okDialogBox = (Button) findViewById(R.id.button_okqrcodedialog);
-        kidsButton = (Button) findViewById(R.id.button_kids);
-        qrCode = (ImageView) findViewById(R.id.imageview_qrcode);
+
+
 
         kidsList = new ArrayList<>();
-
-        kidsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -87,6 +79,16 @@ public class YourKidsActivity extends AppCompatActivity {
 
         ViewKids viewKids = new ViewKids();
         viewKids.execute(this);
+
+//        kidsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String name = kidName.getText().toString();
+//                GetInfoFromNameAsync getInfoFromNameAsync = new GetInfoFromNameAsync();
+//                getInfoFromNameAsync.execute(name);
+//            }
+//        });
+
     }
 
     @Override
@@ -127,6 +129,73 @@ public class YourKidsActivity extends AppCompatActivity {
             }
             kidsAdapter = new KidsAdapter(context, kidsList);
             recyclerView.setAdapter(kidsAdapter);
+        }
+    }
+
+    public void dialogBoxKidInfo(String kidName, String kidId)
+    {
+        Button okDialogBoxButton = (Button) findViewById(R.id.button_okqrcodedialog);
+        ImageView qrCodeDialog = (ImageView) findViewById(R.id.imageview_qrcodedialog);
+        TextView kidNameDialog = (TextView)findViewById(R.id.textView_kidnamedialog);
+
+        final AlertDialog.Builder alert = new AlertDialog.Builder(YourKidsActivity.this);
+        View viewForDialogBox = getLayoutInflater().inflate(R.layout.kids_dialoginfo, null);
+
+        String contentsOfQRCode = kidName + "/" + kidId;
+        new QRCodeImageDownloader(qrCodeDialog).execute("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + contentsOfQRCode);
+        kidNameDialog.setText(kidName);
+
+        alert.setView(viewForDialogBox);
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+
+        okDialogBoxButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+
+        alertDialog.show();
+    }
+
+    //Fetch the entire information from name
+    private class GetInfoFromNameAsync extends  AsyncTask<String, Void, Kids> {
+        @Override
+        protected Kids doInBackground(String... params) {
+
+            Kids kids = new Kids();
+            kids = database.kidsDAO().findByName(params[0]);
+
+            return kids;
+        }
+
+        @Override
+        protected void onPostExecute(Kids kids) {
+            //Kids upon select and Ok button in the dialog box
+            Button okDialogBoxButton = (Button) findViewById(R.id.button_okqrcodedialog);;
+            ImageView qrCodeDialog = (ImageView) findViewById(R.id.imageview_qrcode);;
+            TextView kidNameDialog = (TextView)findViewById(R.id.textView_kidnamedialog);;
+
+            String contentsOfQRCode = kids.getKidName() + "/" + kids.getKidId();
+            final AlertDialog.Builder alert = new AlertDialog.Builder(YourKidsActivity.this);
+            View viewForDialogBox = getLayoutInflater().inflate(R.layout.kids_dialoginfo, null);
+
+            new QRCodeImageDownloader(qrCodeDialog).execute("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + contentsOfQRCode);
+            kidNameDialog.setText(kids.getKidName());
+
+            alert.setView(viewForDialogBox);
+            final AlertDialog alertDialog = alert.create();
+            alertDialog.setCanceledOnTouchOutside(false);
+
+            okDialogBoxButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+
+            alertDialog.show();
         }
     }
 
