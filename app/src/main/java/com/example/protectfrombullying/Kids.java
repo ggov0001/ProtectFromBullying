@@ -3,13 +3,13 @@ package com.example.protectfrombullying;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 @Entity
 public class Kids {
 
-    @PrimaryKey(autoGenerate = true)
-    public int id;
-
+    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "kid_id")
     public String kidId;
 
@@ -19,23 +19,9 @@ public class Kids {
     public Kids() {
     }
 
-    public Kids(int id, String kidId, String kidName) {
-        this.id = id;
-        this.kidId = kidId;
-        this.kidName = kidName;
-    }
-
     public Kids(String kidId, String kidName) {
         this.kidId = kidId;
         this.kidName = kidName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getKidId() {

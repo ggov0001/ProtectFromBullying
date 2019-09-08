@@ -22,8 +22,4 @@ public interface KidsDAO {
     @Query("DELETE FROM Kids")
     void deleteAll();
 
-    //Get number steps for a given user in a given time
-    @Query("SELECT * FROM Kids k WHERE k.kid_name = :kidName")
-    Kids findByName(String kidName);
-
 }

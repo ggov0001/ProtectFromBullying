@@ -1,6 +1,9 @@
 package com.example.protectfrombullying;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,6 +21,9 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
 
     private Context context;
     public List<Kids> kidsList;
+
+    //for Deleting a kid
+    private KidsDatabase database;
 
     public KidsAdapter(Context context, List<Kids> kidsList) {
         this.context = context;
@@ -31,12 +38,15 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
 
         KidsViewHolder kidsViewHolder = new KidsViewHolder(view, new KidsViewHolder.MyClickListener() {
             @Override
-            public void onKidsButton(int position) {
-
+            public void onKidsButton(final int position) {
+                //click on a kid's card
                 final AlertDialog.Builder alert = new AlertDialog.Builder(context);
                 View viewForDialogBox = inflater.inflate(R.layout.kids_dialoginfo, null);
 
+                database = Room.databaseBuilder(context, KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
+
                 Button okDialogBoxButton = (Button) viewForDialogBox.findViewById(R.id.button_okqrcodedialog);
+                final Button deleteDialogButton = (Button) viewForDialogBox.findViewById(R.id.button_deleteqrcodedialog);
                 ImageView qrCodeDialog = (ImageView) viewForDialogBox.findViewById(R.id.imageview_qrcodedialog);
                 TextView kidNameDialog = (TextView) viewForDialogBox.findViewById(R.id.textView_kidnamedialog);
 
@@ -52,6 +62,14 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
                     @Override
                     public void onClick(View v) {
                         alertDialog.dismiss();
+                    }
+                });
+
+                deleteDialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DeleteKidAsync deleteKidAsync = new DeleteKidAsync();
+                        deleteKidAsync.execute(position);
                     }
                 });
 
@@ -103,6 +121,25 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
 
         public interface MyClickListener {
             void onKidsButton(int position);
+        }
+    }
+
+    //Delete the kid record
+    private class DeleteKidAsync extends AsyncTask<Integer, Void, String> {
+
+        @Override
+        protected String doInBackground(Integer... position) {
+            Kids kids = new Kids((kidsList.get(position[0]).getKidId()),(kidsList.get(position[0]).getKidName()));
+            database.kidsDAO().delete(kids);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String value) {
+            Toast.makeText(context, "Deleted!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(context, YourKidsActivity.class);
+            context.startActivity(intent);
+
         }
     }
 

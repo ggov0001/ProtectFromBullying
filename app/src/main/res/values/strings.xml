@@ -48,4 +48,5 @@
     <string name="addkidsprocedure2">* Click on "Generate" to generate the QR code.</string>
     <string name="addkidsprocedure3">* The QR code contains the kid name and a unique identifier.</string>
     <string name="addkidsprocedure4">* Scan the QR code in your kids phone once the app is installed.</string>
+    <string name="title_activity_kid_home">KidHomeActivity</string>
 </resources>

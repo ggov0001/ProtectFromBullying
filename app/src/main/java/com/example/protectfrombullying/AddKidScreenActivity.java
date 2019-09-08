@@ -79,8 +79,8 @@ public class AddKidScreenActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DeleteKids deleteKids = new DeleteKids();
-                deleteKids.execute();
+                Intent intent = new Intent(AddKidScreenActivity.this, YourKidsActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -130,23 +130,6 @@ public class AddKidScreenActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Added!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(AddKidScreenActivity.this, YourKidsActivity.class);
             startActivity(intent);
-        }
-    }
-
-    //Delete the records
-    private class DeleteKids extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... strings) {
-            database.kidsDAO().deleteAll();
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String params) {
-            //set the calorie goal to 0
-            Toast.makeText(getApplicationContext(), "Deleted!", Toast.LENGTH_LONG).show();
         }
     }
 
