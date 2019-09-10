@@ -22,7 +22,7 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
     private Context context;
     public List<Kids> kidsList;
 
-    //for Deleting a kid
+    //Instance created for Deleting a kid
     private KidsDatabase database;
 
     public KidsAdapter(Context context, List<Kids> kidsList) {
@@ -39,17 +39,19 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
         KidsViewHolder kidsViewHolder = new KidsViewHolder(view, new KidsViewHolder.MyClickListener() {
             @Override
             public void onKidsButton(final int position) {
-                //click on a kid's card
+                //click on a kid's card for alert
                 final AlertDialog.Builder alert = new AlertDialog.Builder(context);
                 View viewForDialogBox = inflater.inflate(R.layout.kids_dialoginfo, null);
-
+                //Initialize database
                 database = Room.databaseBuilder(context, KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
 
+                //Initialize buttons, imageview and text view in the dialog
                 Button okDialogBoxButton = (Button) viewForDialogBox.findViewById(R.id.button_okqrcodedialog);
                 final Button deleteDialogButton = (Button) viewForDialogBox.findViewById(R.id.button_deleteqrcodedialog);
                 ImageView qrCodeDialog = (ImageView) viewForDialogBox.findViewById(R.id.imageview_qrcodedialog);
                 TextView kidNameDialog = (TextView) viewForDialogBox.findViewById(R.id.textView_kidnamedialog);
 
+                // show the qr code
                 String contentsOfQRCode = kidsList.get(position).getKidName() + "/" + kidsList.get(position).getKidId();
                 new QRCodeImageDownloader(qrCodeDialog).execute("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + contentsOfQRCode);
                 kidNameDialog.setText(kidsList.get(position).getKidName());

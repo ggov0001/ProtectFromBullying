@@ -49,4 +49,6 @@
     <string name="addkidsprocedure3">* The QR code contains the kid name and a unique identifier.</string>
     <string name="addkidsprocedure4">* Scan the QR code in your kids phone once the app is installed.</string>
     <string name="title_activity_kid_home">KidHomeActivity</string>
+    <string name="title_activity_kid_bar_code_scan">KidBarCodeScanActivity</string>
+    <string name="title_activity_kid_qrscan">KidQRScanActivity</string>
 </resources>

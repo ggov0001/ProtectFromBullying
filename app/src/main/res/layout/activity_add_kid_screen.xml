@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AddKidScreenActivity">
 
+
     <TextView
         android:id="@+id/textView_addkids"
         android:layout_width="match_parent"
@@ -150,4 +151,5 @@
         android:id="@+id/abc"
         android:layout_below="@+id/button_cancelqrcode"
         android:layout_marginTop="10dp"/>
+
 </RelativeLayout>

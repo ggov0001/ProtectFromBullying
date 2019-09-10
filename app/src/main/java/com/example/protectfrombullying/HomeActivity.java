@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(HomeActivity.this, DummyActivity.class);
+                    Intent dashboardIntent = new Intent(HomeActivity.this, KidQRScanActivity.class);
                     startActivity(dashboardIntent);
                     return true;
                 case R.id.navigation_notifications:

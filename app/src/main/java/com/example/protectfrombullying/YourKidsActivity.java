@@ -106,6 +106,7 @@ public class YourKidsActivity extends AppCompatActivity {
                 String kidId = allRecords.get(i).kidId;
                 kidsList.add(new Kids(kidId, kidName));
             }
+            //set the values in the recycler view
             kidsAdapter = new KidsAdapter(context, kidsList);
             recyclerView.setAdapter(kidsAdapter);
         }
