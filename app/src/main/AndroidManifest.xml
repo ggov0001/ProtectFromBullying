@@ -14,12 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".KidsQRScanActivity"></activity>
         <activity
             android:name=".KidHomeActivity"
-            android:label="@string/title_activity_kid_home"></activity>
-        <activity
-            android:name=".KidQRScanActivity"
-            android:label="@string/title_activity_kid_qrscan" />
+            android:label="@string/title_activity_kid_home" />
         <activity android:name=".AddKidScreenActivity" />
         <activity
             android:name=".YourKidsActivity"
@@ -51,10 +49,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
-
-        <meta-data
-            android:name="com.google.android.gms.vision.DEPENDENCIES"
-            android:value="barcode"></meta-data>
     </application>
 
 </manifest>
