@@ -18,7 +18,7 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
     ZXingScannerView scannerView;
 
     private KidsDatabase database;
-    boolean isDone = false;
+    //boolean isDone = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +35,13 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
 //        KidHomeActivity.check.setText(result.getText());
         final String[] splitIdAndName = result.getText().split("/");
 
-       String kidId = splitIdAndName[1];
+        String kidId = splitIdAndName[1];
         String kidName = splitIdAndName[0];
         final Kids kids = new Kids(kidId, kidName);
 
         AddKidAsync addKidAsync = new AddKidAsync();
         addKidAsync.execute(kids);
-        if(isDone)
+        //if(isDone)
             onBackPressed();
 
     }
@@ -94,7 +94,7 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
         protected void onPostExecute(List<Kids> kids) {
             //KidHomeActivity.check.setText(kids.get(0).getKidName());
             Toast.makeText(getApplicationContext(), "Thanks! Welcome " + kids.get(0).getKidName() + ".", Toast.LENGTH_LONG).show();
-            isDone = true;
+            //isDone = true;
             Intent intent = new Intent(KidsQRScanActivity.this, KidHomeActivity.class);
             startActivity(intent);
         }

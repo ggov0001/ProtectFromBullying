@@ -1,12 +1,15 @@
 package com.example.protectfrombullying;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class UserTypeActivity extends AppCompatActivity {
 
@@ -16,6 +19,9 @@ public class UserTypeActivity extends AppCompatActivity {
 
     private Animation forImage;
 
+    //Database
+    private KidsDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,24 +30,66 @@ public class UserTypeActivity extends AppCompatActivity {
         imageView_Parent = (ImageView) findViewById(R.id.imageView_Parent);
         imageView_Student = (ImageView) findViewById(R.id.imageView_Student);
         forImage = AnimationUtils.loadAnimation(this, R.anim.usertype);
+        //Initialize database
+        database = Room.databaseBuilder(getApplicationContext(), KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
+
+        imageView_Student.startAnimation(forImage);
+        imageView_Parent.startAnimation(forImage);
 
         imageView_Parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserTypeActivity.this, MainActivity.class);
-                startActivity(intent);
+                ParentLoggedInAsync parentLoggedInAsync = new ParentLoggedInAsync();
+                parentLoggedInAsync.execute();
             }
         });
 
         imageView_Student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserTypeActivity.this, KidHomeActivity.class);
-                startActivity(intent);
+                KidLoggedInAsync KidLoggedInAsync = new KidLoggedInAsync();
+                KidLoggedInAsync.execute();
             }
         });
 
-        imageView_Student.startAnimation(forImage);
-        imageView_Parent.startAnimation(forImage);
+
+    }
+
+    //Inserting Value to database
+    private class ParentLoggedInAsync extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+
+//            LoggedIn loggedIn = new LoggedIn(1, 1);
+//            database.loggedInDAO().insert(loggedIn);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String args) {
+            Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(UserTypeActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    //Inserting Value to database
+    private class KidLoggedInAsync extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+
+//            LoggedIn loggedIn = new LoggedIn(0, 1);
+//            database.loggedInDAO().insert(loggedIn);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String args) {
+            Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(UserTypeActivity.this, KidHomeActivity.class);
+            startActivity(intent);
+        }
     }
 }
