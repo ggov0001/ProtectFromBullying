@@ -51,4 +51,8 @@
     <string name="title_activity_kid_home">KidHomeActivity</string>
     <string name="title_activity_kid_bar_code_scan">KidBarCodeScanActivity</string>
     <string name="title_activity_kid_qrscan">KidQRScanActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_dashboard_charts">DashboardChartsActivity</string>
+    <string name="title_activity_dashboard_your_kids">DashboardYourKidsActivity</string>
+    <string name="title_activity_cyber_bully_texts">CyberBullyTextsActivity</string>
 </resources>

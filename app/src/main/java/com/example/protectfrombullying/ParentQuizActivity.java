@@ -1,9 +1,8 @@
 package com.example.protectfrombullying;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,11 +26,11 @@ public class ParentQuizActivity extends AppCompatActivity {
             "Is your kid's demand for money increasing and you have caught them stealing money from your wallet/cash lockers?",
             "When asked about school, the answers aren't specific but just one word replies like \'OK\', \'NO\' etc.?",
             "Is your kid sleeping properly? Does he report frequent nightmares or is waking up in the middle of the night?",
-            "Is your kid Fatigue, tired, shows no spirit?",
+            "Is your kid tired, shows no spirit?",
             "How often does your kid suffer from unexplained headache, stomachache, vomiting, poor appetite, body wasting?",
             "How often is your kid inexplicably irritable?",
-            "Does your kid avoid showing his/her body to you?",
-            "Is your kid washing his clothes, shoes without your knowledge?",
+            "Is your child nervous or neurotic when receiving text messages or Internet notifications?",
+            "Is your kid hiding all phone calls and online activities from you?",
             "Is your kid's academic performance degrading drastically?"
     };
 

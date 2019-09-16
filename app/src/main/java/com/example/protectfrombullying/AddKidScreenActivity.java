@@ -44,6 +44,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
         generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(!(firstName.getText().toString().matches("^[a-zA-Z]{3,10}(?: [a-zA-Z]+){0,2}$")))
                 {
                     firstName.setError("Name can only have alphabets with a minimum of 3 and a maximum of 10.");

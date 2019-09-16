@@ -14,7 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KidsQRScanActivity"></activity>
+        <activity
+            android:name=".CyberBullyTextsActivity"
+            android:label="@string/title_activity_cyber_bully_texts"></activity>
+        <activity
+            android:name=".DashboardYourKidsActivity"
+            android:label="@string/title_activity_dashboard_your_kids" />
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/title_activity_dashboard" />
+        <activity android:name=".KidsQRScanActivity" />
         <activity
             android:name=".KidHomeActivity"
             android:label="@string/title_activity_kid_home" />
@@ -50,9 +59,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name" />
 
-        <service android:name=".MyNotificationListenerService"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-            android:label="@string/app_name">
+        <service
+            android:name=".MyNotificationListenerService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>

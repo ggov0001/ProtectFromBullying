@@ -1,14 +1,16 @@
 package com.example.protectfrombullying;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-@SuppressLint("NewApi")
+
+@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class MyNotificationListenerService extends NotificationListenerService {
 
     private Context context;
