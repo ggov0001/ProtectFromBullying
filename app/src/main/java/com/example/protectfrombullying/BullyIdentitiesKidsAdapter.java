@@ -12,12 +12,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class DashboardKidsAdapter extends RecyclerView.Adapter<DashboardKidsAdapter.KidsViewHolder> {
+public class BullyIdentitiesKidsAdapter extends RecyclerView.Adapter<BullyIdentitiesKidsAdapter.KidsViewHolder> {
 
     private Context context;
     public List<Kids> kidsList;
 
-    public DashboardKidsAdapter(Context context, List<Kids> kidsList) {
+    public BullyIdentitiesKidsAdapter(Context context, List<Kids> kidsList) {
         this.context = context;
         this.kidsList = kidsList;
     }
@@ -28,16 +28,16 @@ public class DashboardKidsAdapter extends RecyclerView.Adapter<DashboardKidsAdap
         final LayoutInflater inflater = LayoutInflater.from(context);
         final View view = inflater.inflate(R.layout.kids_recyclerview, null);
 
-       KidsViewHolder kidsViewHolder = new KidsViewHolder(view, new KidsViewHolder.MyClickListener() {
-           @Override
-           public void onKidsButton(int position) {
-               Intent intent = new Intent(context.getApplicationContext(), CyberBullyTextsActivity.class);
-               intent.putExtra("kidId", kidsList.get(position).getKidId());
-               intent.putExtra("kidName", kidsList.get(position).getKidName());
-               context.startActivity(intent);
-           }
-       });
+        KidsViewHolder kidsViewHolder = new KidsViewHolder(view, new KidsViewHolder.MyClickListener() {
+            @Override
+            public void onKidsButton(int position) {
+                Intent intent = new Intent(context.getApplicationContext(), BullyIdentitiesActivity.class);
+                intent.putExtra("kidId", kidsList.get(position).getKidId());
+                intent.putExtra("kidName", kidsList.get(position).getKidName());
+                context.startActivity(intent);
 
+            }
+        });
         return kidsViewHolder;
     }
 

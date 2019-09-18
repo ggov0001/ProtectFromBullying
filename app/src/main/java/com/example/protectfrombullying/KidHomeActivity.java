@@ -7,14 +7,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -32,7 +28,6 @@ public class KidHomeActivity extends AppCompatActivity {
     //Declare all buttons in the home screen
     private Button qrcodeScannerButton;
 
-    private static TextView check;
 
     private KidsDatabase database;
 
@@ -43,38 +38,12 @@ public class KidHomeActivity extends AppCompatActivity {
     private String pack;
     private String title;
     private String text;
-
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent = new Intent(KidHomeActivity.this, KidHomeActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(KidHomeActivity.this, DummyActivity.class);
-                    startActivity(dashboardIntent);
-                    return true;
-                case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(KidHomeActivity.this, DummyActivity.class);
-                    startActivity(notificationIntent);
-                    return true;
-            }
-            return false;
-        }
-    };
+    private String ticker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kid_home);
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         qrcodeScannerButton = (Button) findViewById(R.id.button_qrcode);
         //Initialize database
@@ -86,6 +55,7 @@ public class KidHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(KidHomeActivity.this, KidsQRScanActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -95,6 +65,30 @@ public class KidHomeActivity extends AppCompatActivity {
         registerReceiver(receiver, intentFilter);
     }
 
+    //Logic to see if the kid is added
+   /* private class CheckIfKidIsCreated extends AsyncTask<String, Void, List<Kids> > {
+
+        @Override
+        protected List<Kids> doInBackground(String... strings) {
+            return database.kidsDAO().getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<Kids> kidsList) {
+            if(kidsList.isEmpty())
+            {
+                Intent intent = new Intent(KidHomeActivity.this, KidsQRScanActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Already Added!" + pack, Toast.LENGTH_LONG).show();
+
+            }
+        }
+    } */
+
     public class Receiver extends BroadcastReceiver {
 
         @Override
@@ -102,10 +96,17 @@ public class KidHomeActivity extends AppCompatActivity {
             pack = intent.getStringExtra("package");
             title = intent.getStringExtra("title");
             text = intent.getStringExtra("text");
+            ticker = intent.getStringExtra("ticker");
 
             Log.i("receive Package",pack);
             Log.i("receive Title",title);
             Log.i("receive Text",text);
+
+            //Wrangle the text(message) from instagram. Received as "username: textabc def.." change it to "textabc def..."
+            if(pack.equals("com.instagram.android")) {
+                String split[] = text.split(": ");
+                text = split[1];
+            }
 
             Toast.makeText(getApplicationContext(), "Received from " + pack, Toast.LENGTH_LONG).show();
 

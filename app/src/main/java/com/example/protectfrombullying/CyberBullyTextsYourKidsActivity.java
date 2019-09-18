@@ -10,19 +10,16 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class YourKidsActivity extends AppCompatActivity {
+public class CyberBullyTextsYourKidsActivity extends AppCompatActivity {
 
     private KidsDatabase database;
 
     private RecyclerView recyclerView;
-    private KidsAdapter kidsAdapter;
 
     List<Kids> kidsList;
     List<Kids> allRecords;
@@ -34,17 +31,17 @@ public class YourKidsActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(YourKidsActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(CyberBullyTextsYourKidsActivity.this, HomeActivity.class);
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(YourKidsActivity.this, DummyActivity.class);
+                    Intent dashboardIntent = new Intent(CyberBullyTextsYourKidsActivity.this, DashboardActivity.class);
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(YourKidsActivity.this, DummyActivity.class);
+                    Intent notificationIntent = new Intent(CyberBullyTextsYourKidsActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
@@ -56,8 +53,7 @@ public class YourKidsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_your_kids);
-
+        setContentView(R.layout.activity_cyberbullytexts_your_kids);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -66,31 +62,12 @@ public class YourKidsActivity extends AppCompatActivity {
 
         kidsList = new ArrayList<>();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDashboard);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ViewKids viewKids = new ViewKids();
         viewKids.execute(this);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.addthekids, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.addkidsicon)
-        {
-            Intent intent = new Intent(YourKidsActivity.this, AddKidScreenActivity.class);
-            startActivity(intent);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     //Display all the steps
@@ -111,8 +88,8 @@ public class YourKidsActivity extends AppCompatActivity {
                 kidsList.add(new Kids(kidId, kidName));
             }
             //set the values in the recycler view
-            kidsAdapter = new KidsAdapter(context, kidsList);
-            recyclerView.setAdapter(kidsAdapter);
+            CyberBullyTextsKidsAdapter cyberBullyTextsKidsAdapter = new CyberBullyTextsKidsAdapter(context, kidsList);
+            recyclerView.setAdapter(cyberBullyTextsKidsAdapter);
         }
     }
 

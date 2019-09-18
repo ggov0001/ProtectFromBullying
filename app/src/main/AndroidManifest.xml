@@ -9,28 +9,34 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_appicon"
         android:label="NoBully 24/7"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_appicon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".CyberBullyTextsActivity"
-            android:label="@string/title_activity_cyber_bully_texts"></activity>
+            android:name=".BullyIdentitiesYourKidsActivity"
+            android:label="NoBully 24/7"></activity>
         <activity
-            android:name=".DashboardYourKidsActivity"
-            android:label="@string/title_activity_dashboard_your_kids" />
+            android:name=".BullyIdentitiesActivity"
+            android:label="NoBully 24/7" />
+        <activity
+            android:name=".CyberBullyTextsActivity"
+            android:label="NoBully 24/7" />
+        <activity
+            android:name=".CyberBullyTextsYourKidsActivity"
+            android:label="NoBully 24/7" />
         <activity
             android:name=".DashboardActivity"
-            android:label="@string/title_activity_dashboard" />
+            android:label="NoBully 24/7" />
         <activity android:name=".KidsQRScanActivity" />
         <activity
             android:name=".KidHomeActivity"
-            android:label="@string/title_activity_kid_home" />
+            android:label="NoBully 24/7" />
         <activity android:name=".AddKidScreenActivity" />
         <activity
             android:name=".YourKidsActivity"
-            android:label="@string/title_activity_your_kids" />
+            android:label="NoBully 24/7" />
         <activity android:name=".LegalHelpActivity" />
         <activity android:name=".GeneralInformationActivity" />
         <activity android:name=".WaysToTackleActivity" />
@@ -42,7 +48,7 @@
         <activity android:name=".HomeActivity" />
         <activity
             android:name=".ParentQuizActivity"
-            android:label="KNOW YOUR KID" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".UserTypeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -57,11 +63,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" />
+            android:label="NoBully 24/7" />
 
         <service
             android:name=".MyNotificationListenerService"
-            android:label="@string/app_name"
+            android:label="NoBully 24/7"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />

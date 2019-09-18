@@ -55,4 +55,7 @@
     <string name="title_activity_dashboard_charts">DashboardChartsActivity</string>
     <string name="title_activity_dashboard_your_kids">DashboardYourKidsActivity</string>
     <string name="title_activity_cyber_bully_texts">CyberBullyTextsActivity</string>
+    <string name="title_activity_bully_identities">BullyIdentitiesActivity</string>
+    <string name="title_activity_bully_identities_your_kids">BullyIdentitiesYourKidsActivity
+    </string>
 </resources>

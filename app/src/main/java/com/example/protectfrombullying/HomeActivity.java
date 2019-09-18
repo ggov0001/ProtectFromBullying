@@ -27,14 +27,17 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent dashboardIntent = new Intent(HomeActivity.this, DashboardActivity.class);
                     startActivity(dashboardIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
                     Intent notificationIntent = new Intent(HomeActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
             return false;
@@ -68,6 +71,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ParentQuizActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -76,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, WaysToTackleActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -84,6 +89,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -92,6 +98,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, YourKidsActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 

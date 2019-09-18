@@ -97,6 +97,7 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
             //isDone = true;
             Intent intent = new Intent(KidsQRScanActivity.this, KidHomeActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
     }
 }

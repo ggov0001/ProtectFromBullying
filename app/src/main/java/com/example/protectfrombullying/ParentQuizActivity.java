@@ -152,6 +152,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     scoreForTheQuiz += 10;
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });

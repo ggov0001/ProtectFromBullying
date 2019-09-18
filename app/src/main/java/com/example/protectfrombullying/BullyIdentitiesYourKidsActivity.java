@@ -15,10 +15,9 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardYourKidsActivity extends AppCompatActivity {
+public class BullyIdentitiesYourKidsActivity extends AppCompatActivity {
 
     private KidsDatabase database;
-
     private RecyclerView recyclerView;
 
     List<Kids> kidsList;
@@ -31,16 +30,19 @@ public class DashboardYourKidsActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(DashboardYourKidsActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(BullyIdentitiesYourKidsActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(DashboardYourKidsActivity.this, DashboardActivity.class);
+                    Intent dashboardIntent = new Intent(BullyIdentitiesYourKidsActivity.this, DashboardActivity.class);
                     startActivity(dashboardIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(DashboardYourKidsActivity.this, DummyActivity.class);
+                    Intent notificationIntent = new Intent(BullyIdentitiesYourKidsActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
             return false;
@@ -50,7 +52,7 @@ public class DashboardYourKidsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard_your_kids);
+        setContentView(R.layout.activity_bully_identities_your_kids);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -59,7 +61,7 @@ public class DashboardYourKidsActivity extends AppCompatActivity {
 
         kidsList = new ArrayList<>();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDashboard);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewBullyIdentities);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -85,8 +87,8 @@ public class DashboardYourKidsActivity extends AppCompatActivity {
                 kidsList.add(new Kids(kidId, kidName));
             }
             //set the values in the recycler view
-            DashboardKidsAdapter dashboardKidsAdapter= new DashboardKidsAdapter(context, kidsList);
-            recyclerView.setAdapter(dashboardKidsAdapter);
+            BullyIdentitiesKidsAdapter bullyIdentitiesKidsAdapter = new BullyIdentitiesKidsAdapter(context, kidsList);
+            recyclerView.setAdapter(bullyIdentitiesKidsAdapter);
         }
     }
 

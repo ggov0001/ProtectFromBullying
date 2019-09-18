@@ -22,14 +22,17 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent dashboardIntent = new Intent(MainActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
                     Intent notificationIntent = new Intent(MainActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
             return false;
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 }

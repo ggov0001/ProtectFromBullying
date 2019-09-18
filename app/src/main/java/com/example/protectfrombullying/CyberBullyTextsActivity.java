@@ -85,13 +85,14 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
     private String getTheKidReport(String kidsId)
     {
 
+        kidsId = "5ULJOuEGM0";
         String baseUrl = "https://nobully-247.appspot.com/api?kidID=";
 
         URL url = null;
         HttpURLConnection conn = null;
         String result = "";
 
-        kidsId = "\"" + kidsId + "\"";
+        kidsId = "\"" + kidsId + "\"" + "&getID=0";
 
         //Making HTTP Request
         try{
@@ -168,6 +169,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //Put the values in the JSON to a Hashmap for sorting values and showing the map appropriately.
         Map<String, Integer> unsortMap = new HashMap<String, Integer>();
         unsortMap.put(label[0], value[0]);
         unsortMap.put(label[1], value[1]);
@@ -219,6 +221,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
         barChart.setMaxVisibleValueCount(10);
+        barChart.setExtraOffsets(30,30,30,60);
         barChart.setPinchZoom(false);
         barChart.setDrawGridBackground(false);
 
@@ -237,7 +240,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.removeAllLimitLines();
         leftAxis.setTypeface(Typeface.DEFAULT);
-        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
+        //leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
         leftAxis.setTextColor(Color.BLACK);
         leftAxis.setDrawGridLines(false);
         barChart.getAxisRight().setEnabled(false);

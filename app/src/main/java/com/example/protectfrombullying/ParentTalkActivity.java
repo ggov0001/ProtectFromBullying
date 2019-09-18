@@ -1,11 +1,10 @@
 package com.example.protectfrombullying;
 
-import android.app.FragmentManager;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,14 +23,17 @@ public class ParentTalkActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     Intent intent = new Intent(ParentTalkActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent dashboardIntent = new Intent(ParentTalkActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
                     Intent notificationIntent = new Intent(ParentTalkActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
             return false;
@@ -55,6 +57,7 @@ public class ParentTalkActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ParentTalkActivity.this, AwarenessActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -63,6 +66,7 @@ public class ParentTalkActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ParentTalkActivity.this, WholeStoryActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

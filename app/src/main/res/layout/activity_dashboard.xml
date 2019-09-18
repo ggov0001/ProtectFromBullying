@@ -137,7 +137,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_identityOfBullies"
+                                    android:id="@+id/button_bullyIdentities"
                                     android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>

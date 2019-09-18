@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BullyIdentitiesActivity">
+
+    <TextView
+        android:id="@+id/textView_bullyIdentitiesHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20sp"
+        android:typeface="sans"
+        app:fontFamily="sans-serif-condensed" />
+
+    <TextView
+        android:id="@+id/textView_selectsocialmedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Select the Social Media:"
+        android:layout_below="@+id/textView_bullyIdentitiesHeading"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"/>
+
+    <Spinner
+        android:id="@+id/spinner_platform"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView_selectsocialmedia"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp">
+    </Spinner>
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bargraph_BullyIdentitiestexts"
+        android:layout_below="@+id/spinner_platform"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+    </com.github.mikephil.charting.charts.BarChart>
+
+</RelativeLayout>

@@ -18,14 +18,17 @@ public class WholeStoryActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     Intent intent = new Intent(WholeStoryActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_dashboard:
                     Intent dashboardIntent = new Intent(WholeStoryActivity.this, DummyActivity.class);
                     startActivity(dashboardIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
                 case R.id.navigation_notifications:
                     Intent notificationIntent = new Intent(WholeStoryActivity.this, DummyActivity.class);
                     startActivity(notificationIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
             return false;

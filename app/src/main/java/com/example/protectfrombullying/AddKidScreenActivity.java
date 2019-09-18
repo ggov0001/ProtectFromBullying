@@ -82,6 +82,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AddKidScreenActivity.this, YourKidsActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -131,6 +132,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Added!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(AddKidScreenActivity.this, YourKidsActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
     }
 
