@@ -69,7 +69,7 @@ public class UserTypeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String args) {
             Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(UserTypeActivity.this, HomeActivity.class);
+            Intent intent = new Intent(UserTypeActivity.this, HomeParentActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
@@ -89,7 +89,7 @@ public class UserTypeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String args) {
             Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(UserTypeActivity.this, KidHomeActivity.class);
+            Intent intent = new Intent(UserTypeActivity.this, HomeKidActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

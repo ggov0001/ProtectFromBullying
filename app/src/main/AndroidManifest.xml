@@ -27,11 +27,11 @@
             android:name=".CyberBullyTextsYourKidsActivity"
             android:label="NoBully 24/7" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".ReportsActivity"
             android:label="NoBully 24/7" />
         <activity android:name=".KidsQRScanActivity" />
         <activity
-            android:name=".KidHomeActivity"
+            android:name=".HomeKidActivity"
             android:label="NoBully 24/7" />
         <activity android:name=".AddKidScreenActivity" />
         <activity
@@ -43,9 +43,9 @@
         <activity android:name=".WholeStoryActivity" />
         <activity android:name=".AwarenessActivity" />
         <activity android:name=".ParentTalkActivity" />
-        <activity android:name=".DummyActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".QuizResultActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeParentActivity" />
         <activity
             android:name=".ParentQuizActivity"
             android:label="NoBully 24/7" />
@@ -61,9 +61,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="NoBully 24/7" />
 
         <service
             android:name=".MyNotificationListenerService"

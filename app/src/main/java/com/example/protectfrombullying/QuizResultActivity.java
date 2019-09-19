@@ -35,15 +35,15 @@ public class QuizResultActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(QuizResultActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(QuizResultActivity.this, HomeParentActivity.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(QuizResultActivity.this, DummyActivity.class);
+                case R.id.navigation_reports:
+                    Intent dashboardIntent = new Intent(QuizResultActivity.this, ReportsActivity.class);
                     startActivity(dashboardIntent);
                     return true;
-                case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(QuizResultActivity.this, DummyActivity.class);
+                case R.id.navigation_settings:
+                    Intent notificationIntent = new Intent(QuizResultActivity.this, SettingsActivity.class);
                     startActivity(notificationIntent);
                     return true;
             }
@@ -55,7 +55,7 @@ public class QuizResultActivity extends AppCompatActivity {
     //Back
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(QuizResultActivity.this, HomeActivity.class);
+        Intent intent = new Intent(QuizResultActivity.this, HomeParentActivity.class);
         startActivity(intent);
     }
 

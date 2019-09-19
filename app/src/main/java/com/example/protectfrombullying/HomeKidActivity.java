@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class KidHomeActivity extends AppCompatActivity {
+public class HomeKidActivity extends AppCompatActivity {
 
     //Declare all buttons in the home screen
     private Button qrcodeScannerButton;
@@ -43,7 +43,7 @@ public class KidHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kid_home);
+        setContentView(R.layout.activity_home_kid);
 
         qrcodeScannerButton = (Button) findViewById(R.id.button_qrcode);
         //Initialize database
@@ -53,7 +53,7 @@ public class KidHomeActivity extends AppCompatActivity {
         qrcodeScannerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(KidHomeActivity.this, KidsQRScanActivity.class);
+                Intent intent = new Intent(HomeKidActivity.this, KidsQRScanActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -77,7 +77,7 @@ public class KidHomeActivity extends AppCompatActivity {
         protected void onPostExecute(List<Kids> kidsList) {
             if(kidsList.isEmpty())
             {
-                Intent intent = new Intent(KidHomeActivity.this, KidsQRScanActivity.class);
+                Intent intent = new Intent(HomeKidActivity.this, KidsQRScanActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }

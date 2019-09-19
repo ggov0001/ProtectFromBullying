@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".ReportsActivity">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -77,7 +77,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Periodic Cyberbully Overview"
+                                    android:text="Cyberbully Overview"
                                     android:textSize="16sp"
                                     android:gravity="center"
                                     android:layout_below="@+id/imageView_iconCyberbullyTexts"

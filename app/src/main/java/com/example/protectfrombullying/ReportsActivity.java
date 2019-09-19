@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class DashboardActivity extends AppCompatActivity {
+public class ReportsActivity extends AppCompatActivity {
 
     private Button cyberBullyReport;
     private Button bullyIdentitiesReport;
@@ -21,17 +21,17 @@ public class DashboardActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(DashboardActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(ReportsActivity.this, HomeParentActivity.class);
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(DashboardActivity.this, DashboardActivity.class);
+                case R.id.navigation_reports:
+                    Intent dashboardIntent = new Intent(ReportsActivity.this, ReportsActivity.class);
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(DashboardActivity.this, DummyActivity.class);
+                case R.id.navigation_settings:
+                    Intent notificationIntent = new Intent(ReportsActivity.this, SettingsActivity.class);
                     startActivity(notificationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
@@ -43,10 +43,11 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_reports);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
 
         cyberBullyReport = (Button) findViewById(R.id.button_iconCyberbullyTexts);
         bullyIdentitiesReport = (Button) findViewById(R.id.button_bullyIdentities);
@@ -54,7 +55,7 @@ public class DashboardActivity extends AppCompatActivity {
         cyberBullyReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, CyberBullyTextsYourKidsActivity.class);
+                Intent intent = new Intent(ReportsActivity.this, CyberBullyTextsYourKidsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -63,7 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
         bullyIdentitiesReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, BullyIdentitiesYourKidsActivity.class);
+                Intent intent = new Intent(ReportsActivity.this, BullyIdentitiesYourKidsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }

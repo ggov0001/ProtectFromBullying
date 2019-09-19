@@ -31,17 +31,17 @@ public class CyberBullyTextsYourKidsActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(CyberBullyTextsYourKidsActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(CyberBullyTextsYourKidsActivity.this, HomeParentActivity.class);
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(CyberBullyTextsYourKidsActivity.this, DashboardActivity.class);
+                case R.id.navigation_reports:
+                    Intent dashboardIntent = new Intent(CyberBullyTextsYourKidsActivity.this, ReportsActivity.class);
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(CyberBullyTextsYourKidsActivity.this, DummyActivity.class);
+                case R.id.navigation_settings:
+                    Intent notificationIntent = new Intent(CyberBullyTextsYourKidsActivity.this, SettingsActivity.class);
                     startActivity(notificationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;

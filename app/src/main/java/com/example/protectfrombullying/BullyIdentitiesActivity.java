@@ -114,7 +114,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
 
         @Override
         protected String doInBackground(String... params) {
-            reportFromServer = getTheKidReport(getIntent().getStringExtra("kidsId"));
+            reportFromServer = getTheKidReport(getIntent().getStringExtra("kidId"));
 
             return reportFromServer;
         }
@@ -203,7 +203,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
     private String getTheKidReport(String kidsId)
     {
 
-        kidsId = "5ULJOuEGM0";
+        //kidsId = "5ULJOuEGM0";
 
         URL url = null;
         HttpURLConnection conn = null;

@@ -32,7 +32,7 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
 
     @Override
     public void handleResult(Result result) {
-//        KidHomeActivity.check.setText(result.getText());
+//        HomeKidActivity.check.setText(result.getText());
         final String[] splitIdAndName = result.getText().split("/");
 
         String kidId = splitIdAndName[1];
@@ -92,10 +92,10 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
 
         @Override
         protected void onPostExecute(List<Kids> kids) {
-            //KidHomeActivity.check.setText(kids.get(0).getKidName());
+            //HomeKidActivity.check.setText(kids.get(0).getKidName());
             Toast.makeText(getApplicationContext(), "Thanks! Welcome " + kids.get(0).getKidName() + ".", Toast.LENGTH_LONG).show();
             //isDone = true;
-            Intent intent = new Intent(KidsQRScanActivity.this, KidHomeActivity.class);
+            Intent intent = new Intent(KidsQRScanActivity.this, HomeKidActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeParentActivity extends AppCompatActivity {
 
     //Declare all buttons in the home screen
     private Button quizButton;
@@ -25,17 +25,17 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(HomeParentActivity.this, HomeParentActivity.class);
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_dashboard:
-                    Intent dashboardIntent = new Intent(HomeActivity.this, DashboardActivity.class);
+                case R.id.navigation_reports:
+                    Intent dashboardIntent = new Intent(HomeParentActivity.this, ReportsActivity.class);
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_notifications:
-                    Intent notificationIntent = new Intent(HomeActivity.this, DummyActivity.class);
+                case R.id.navigation_settings:
+                    Intent notificationIntent = new Intent(HomeParentActivity.this, SettingsActivity.class);
                     startActivity(notificationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_parent);
         //Initialize
         quizButton = (Button) findViewById(R.id.button_iconQuiz);
         waysToTackleButton = (Button) findViewById(R.id.button_iconTackle);
@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         quizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ParentQuizActivity.class);
+                Intent intent = new Intent(HomeParentActivity.this, ParentQuizActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         waysToTackleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, WaysToTackleActivity.class);
+                Intent intent = new Intent(HomeParentActivity.this, WaysToTackleActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -87,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         talkToKidsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ParentTalkActivity.class);
+                Intent intent = new Intent(HomeParentActivity.this, ParentTalkActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -96,7 +96,7 @@ public class HomeActivity extends AppCompatActivity {
         yourKids.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, YourKidsActivity.class);
+                Intent intent = new Intent(HomeParentActivity.this, YourKidsActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }

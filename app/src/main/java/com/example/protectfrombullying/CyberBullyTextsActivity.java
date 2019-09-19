@@ -85,7 +85,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
     private String getTheKidReport(String kidsId)
     {
 
-        kidsId = "5ULJOuEGM0";
+        //kidsId = "5ULJOuEGM0";
         String baseUrl = "https://nobully-247.appspot.com/api?kidID=";
 
         URL url = null;
