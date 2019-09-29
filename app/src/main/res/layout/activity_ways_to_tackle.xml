@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WaysToTackleActivity">
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation" />
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364">
+        android:layout_above="@+id/navigation">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -28,31 +34,21 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="255dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/parenttalk">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="255dp"
                         android:gravity="center"
                         android:text="WAYS TO TACKLE"
-                        android:textColor="#ffff"
                         android:textSize="25dp"
+                        android:textColor="#ffff"
                         android:textStyle="bold"
                         android:typeface="normal"
                         app:fontFamily="sans-serif-condensed" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:gravity="center"
-                        android:text="Follow these simple things."
-                        android:textColor="#ffff"
-                        android:textSize="20dp"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-light" />
 
                 </LinearLayout>
 
@@ -60,13 +56,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="270dp"
+                    android:layout_marginTop="315dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="180dp"
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
 
@@ -82,31 +78,79 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
+                                <ImageView
+                                    android:id="@+id/imageView_iconQuiz"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/iconquiz"
+                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginBottom="10dp"
+                                    android:text="Take Action"
+                                    android:textSize="16sp"
                                     android:gravity="center"
-                                    android:layout_marginTop="45dp"
-                                    android:text="GENERAL INFORMATION"
-                                    android:textSize="22dp"
-                                    android:textStyle="bold" />
+                                    android:layout_below="@+id/imageView_iconQuiz"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
 
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_generalInformation"
+                                    android:id="@+id/button_takeaction"
                                     android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
                         </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView_iconKids"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/iconboy"
+                                    android:layout_centerInParent="true"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Counselling and Support"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageView_iconKids"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/button_counseling"
+                                    android:background="@drawable/custom_button_cards"/>
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="180dp"
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
 
@@ -122,34 +166,73 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
+                                <ImageView
+                                    android:id="@+id/imageView_iconTackle"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/iconstackle"
+                                    android:layout_centerInParent="true"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:text="Legal Help"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageView_iconTackle"
                                     android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:layout_marginTop="45dp"
-                                    android:gravity="center"
-                                    android:text="LEGAL HELP"
-                                    android:textSize="22dp"
-                                    android:textStyle="bold" />
+                                    />
 
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/button_legalHelp"
+                                    android:id="@+id/button_legal"
+                                    android:background="@drawable/custom_button_cards"/>
+
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView_iconTalkToKids"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/iconcommunicate"
+                                    android:layout_centerInParent="true"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Psychological Help"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageView_iconTalkToKids"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/button_psychological"
                                     android:background="@drawable/custom_button_cards"/>
 
                             </RelativeLayout>
 
                         </android.support.v7.widget.CardView>
                     </LinearLayout>
-
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
 
                 </LinearLayout>
 
@@ -161,16 +244,6 @@
 
     </ScrollView>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
 
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

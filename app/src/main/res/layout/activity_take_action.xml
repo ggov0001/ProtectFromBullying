@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WholeStoryActivity">
+    tools:context=".TakeActionActivity">
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -45,7 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:gravity="center"
-                        android:text="THE WHOLE STORY"
+                        android:text="TAKE ACTION"
                         android:textColor="#ffff"
                         android:textSize="25dp"
                         android:textStyle="bold"
@@ -94,7 +96,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_1"
+                                    android:text="@string/takeaction_1"
                                     android:textSize="20dp"
                                     android:layout_marginTop="50dp"
                                     android:textStyle="bold"
@@ -130,7 +132,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_2"
+                                    android:text="@string/takeaction_2"
                                     android:textSize="20dp"
                                     android:layout_marginTop="25dp"
                                     android:textStyle="bold"
@@ -166,7 +168,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_3"
+                                    android:text="@string/takeaction_3"
                                     android:textSize="20dp"
                                     android:layout_marginTop="40dp"
                                     android:textStyle="bold"
@@ -203,7 +205,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_4"
+                                    android:text="@string/takeaction_4"
                                     android:textSize="20dp"
                                     android:layout_marginTop="25dp"
                                     android:textStyle="bold"
@@ -240,7 +242,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_5"
+                                    android:text="@string/takeaction_5"
                                     android:textSize="20dp"
                                     android:layout_marginTop="25dp"
                                     android:textStyle="bold"
@@ -276,7 +278,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_6"
+                                    android:text="@string/takeaction_6"
                                     android:textSize="20dp"
                                     android:layout_marginTop="50dp"
                                     android:textStyle="bold"
@@ -312,7 +314,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_7"
+                                    android:text="@string/takeaction_7"
                                     android:textSize="20dp"
                                     android:layout_marginTop="15dp"
                                     android:textStyle="bold"
@@ -348,7 +350,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_8"
+                                    android:text="@string/takeaction_8"
                                     android:textSize="20dp"
                                     android:layout_marginTop="40dp"
                                     android:textStyle="bold"
@@ -385,7 +387,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_9"
+                                    android:text="@string/takeaction_9"
                                     android:textSize="20dp"
                                     android:layout_marginTop="40dp"
                                     android:textStyle="bold"
@@ -422,7 +424,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_10"
+                                    android:text="@string/takeaction_10"
                                     android:textSize="20dp"
                                     android:layout_marginTop="30dp"
                                     android:textStyle="bold"
@@ -437,78 +439,7 @@
                         </android.support.v7.widget.CardView>
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="10dp">
 
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_11"
-                                    android:textSize="20dp"
-                                    android:layout_marginTop="30dp"
-                                    android:textStyle="bold"
-                                    android:typeface="normal"
-                                    app:fontFamily="sans-serif-condensed"
-                                    android:gravity="center"
-                                    android:layout_centerHorizontal="true"
-                                    />
-
-                            </RelativeLayout>
-
-                        </android.support.v7.widget.CardView>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="10dp">
-
-                        <android.support.v7.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/wholestory_12"
-                                    android:textSize="20dp"
-                                    android:layout_marginTop="30dp"
-                                    android:textStyle="bold"
-                                    android:typeface="normal"
-                                    app:fontFamily="sans-serif-condensed"
-                                    android:gravity="center"
-                                    android:layout_centerHorizontal="true"
-                                    />
-
-                            </RelativeLayout>
-
-                        </android.support.v7.widget.CardView>
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -517,7 +448,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-
 
 </RelativeLayout>

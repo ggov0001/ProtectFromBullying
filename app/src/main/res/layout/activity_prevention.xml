@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreventionActivity">
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_above="@+id/navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="255dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/parenttalk">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="255dp"
+                        android:gravity="center"
+                        android:text="PREVENTION STARTS WITH AWARENESS"
+                        android:textSize="25dp"
+                        android:textColor="#ffff"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        app:fontFamily="sans-serif-condensed" />
+
+                </LinearLayout>
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector1"
+                    android:layout_below="@+id/linearViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector2"
+                    android:layout_below="@+id/swipeSelector1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector3"
+                    android:layout_below="@+id/swipeSelector2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector4"
+                    android:layout_below="@+id/swipeSelector3"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector5"
+                    android:layout_below="@+id/swipeSelector4"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

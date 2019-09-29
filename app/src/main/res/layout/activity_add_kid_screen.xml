@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/textView_addkids"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="ADD YOUR KID"
         android:textSize="25dp"
@@ -21,7 +21,7 @@
     <TextView
         android:id="@+id/textView_addkidsprocedure"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:text="PROCEDURE:"
         android:layout_below="@+id/textView_addkids"
         android:layout_marginTop="25dp"
@@ -151,5 +151,13 @@
         android:id="@+id/abc"
         android:layout_below="@+id/button_cancelqrcode"
         android:layout_marginTop="10dp"/>
+
+    <com.victor.loading.rotate.RotateLoading
+        android:id="@+id/rotateloading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:loading_width="5dp"
+        app:loading_color="@color/design_default_color_primary"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

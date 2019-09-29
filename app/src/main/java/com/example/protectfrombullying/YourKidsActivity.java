@@ -43,9 +43,14 @@ public class YourKidsActivity extends AppCompatActivity {
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_settings:
-                    Intent notificationIntent = new Intent(YourKidsActivity.this, SettingsActivity.class);
-                    startActivity(notificationIntent);
+                case R.id.navigation_yourkids:
+                    Intent yourKidsIntent = new Intent(YourKidsActivity.this, YourKidsActivity.class);
+                    startActivity(yourKidsIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                case R.id.navigation_information:
+                    Intent infromationIntent = new Intent(YourKidsActivity.this, WaysToTackleActivity.class);
+                    startActivity(infromationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }

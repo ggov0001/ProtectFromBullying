@@ -30,9 +30,14 @@ public class ParentTalkActivity extends AppCompatActivity {
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_settings:
-                    Intent notificationIntent = new Intent(ParentTalkActivity.this, SettingsActivity.class);
-                    startActivity(notificationIntent);
+                case R.id.navigation_yourkids:
+                    Intent yourKidsIntent = new Intent(ParentTalkActivity.this, YourKidsActivity.class);
+                    startActivity(yourKidsIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                case R.id.navigation_information:
+                    Intent infromationIntent = new Intent(ParentTalkActivity.this, WaysToTackleActivity.class);
+                    startActivity(infromationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
@@ -55,7 +60,7 @@ public class ParentTalkActivity extends AppCompatActivity {
         awarenessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ParentTalkActivity.this, AwarenessActivity.class);
+                Intent intent = new Intent(ParentTalkActivity.this, PreventionActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }

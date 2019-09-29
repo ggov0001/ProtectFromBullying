@@ -7,33 +7,25 @@
     tools:context=".UserTypeActivity"
     android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView_Parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/areyouaparent"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:clickable="true"/>
+    <ImageView
+        android:id="@+id/imageView_Parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/areyouaparent"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        android:clickable="true"/>
 
 
-        <ImageView
-            android:id="@+id/imageView_Student"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/areyouastudent"
-            android:clickable="true"/>
-
-
-
-
-
-
-
-
+    <ImageView
+        android:id="@+id/imageView_Student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/kid"
+        android:clickable="true"/>
 
 </LinearLayout>

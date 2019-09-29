@@ -2,31 +2,32 @@
     <string name="app_name">ProtectFromBullying</string>
     <string name="title_home">Home</string>
     <string name="title_reports">Reports</string>
-    <string name="title_settings">Settings</string>
+    <string name="title_kids">Your Kids</string>
+    <string name="title_information">Information</string>
 
-    <string name="awareness_1">Maintaining good communication is the most effeective way to protect your kid.</string>
-    <string name="awareness_2">Pay attention to changes in your child’s behavior</string>
-    <string name="awareness_3">Make it rewarding for children to develop the habit of telling you about what happens at school each day.</string>
-    <string name="awareness_4">Start from asking specific questions in a cheerful way that goes beyond: “How was school today?”</string>
-    <string name="awareness_5">Tell children clearly,and often, “You have the right to feel safe and respected at school and the responsibility to act safely, respectfully towards others.</string>
+    <string name="wholestory_1">Take the cyberbullying seriously.</string>
+    <string name="wholestory_2">Help them identify what cyberbullying is.</string>
+    <string name="wholestory_3">Find out details about the cyberbullying.</string>
+    <string name="wholestory_4">Teach them that cyberbullying is never ok.</string>
+    <string name="wholestory_5">Reassure them that they are loved.</string>
+    <string name="wholestory_6">Work together to figure out ways they can take back power from the ‘bully’.</string>
+    <string name="wholestory_7">Involve them in decision making at home to increase their sense of power and control.</string>
+    <string name="wholestory_8">Be a role model by calmly managing your own emotions.</string>
+    <string name="wholestory_9">Create opportunities to expand their support friendships.</string>
+    <string name="wholestory_10">Support them to speak to another trusted adult or counsellor.</string>
+    <string name="wholestory_11">Advise them to avoid opening emails, messages or responding to cyberbullies.</string>
+    <string name="wholestory_12">Respect that they may not want to limit online access as this can seem like a punishment and lead to greater social isolation.</string>
 
-    <string name="wholestory_1">Stay Calm</string>
-    <string name="wholestory_2">If you are upset, your children would be upset too. They would try to protect you by not telling the problems In their life</string>
-    <string name="wholestory_3">Start with asking a couple of specific questions each day with curiosity rather than anxiety</string>
-    <string name="wholestory_4">Questions like:  “What games did you play at recess? Did the class guinea pig do anything silly?”</string>
-    <string name="wholestory_5">And then question like:  “Do you have any interesting stories to tell me about what people said or did?”</string>
-    <string name="wholestory_6">Keep going deeper on very question you ask</string>
-    <string name="wholestory_7">Questions like this helps:  “I saw this happen/heard about this happening. It looked/sounded like it might be unpleasant for you. Can you tell me more about it?”</string>
-    <string name="wholestory_8">Stay respectful, loving, and peaceful when you listen to their answers</string>
-    <string name="wholestory_9">Instead of jumping to conclusions or making assumptions, take time to get the whole story</string>
-    <string name="wholestory_10">Ask questions to your child in a calm, reassuring way and listen to the answers</string>
-
-    <string name="waystotackle_1">Stay Calm</string>
-    <string name="waystotackle_2">What not to Advice?</string>
-    <string name="waystotackle_3">Discuss strategies for face to face bullying</string>
-    <string name="waystotackle_4">Discuss strategies for online bullying</string>
-    <string name="waystotackle_5">Report the bullying to the school</string>
-    <string name="waystotackle_6">Seek Help</string>
+    <string name="takeaction_1">Notifying the school of the cyberbullying.</string>
+    <string name="takeaction_2">Find out more about the school’s anti-bullying policies.</string>
+    <string name="takeaction_3">Help them to keep a record of the bullying in case it needs to be reported.</string>
+    <string name="takeaction_4">Reporting serious cases of cyberbullying to the Police - cyber stalking, which is repeated harassment usually containing threatening messages with the aim to intimidate and create fear, is a crime and should always be reported.</string>
+    <string name="takeaction_5">Help your child to “call out” the behaviour of the ‘bully’.</string>
+    <string name="takeaction_6">Encourage them to use statements like “You are going too far – this is bullying and I want you to stop”.</string>
+    <string name="takeaction_7">Suggest your child ‘block’ or remove the bully from their friend list and change their username or mobile number.</string>
+    <string name="takeaction_8">Help them file a complaint with the website manager.</string>
+    <string name="takeaction_9">Help them spend some time away from the computer and mobile phone by increasing their options for doing other fun activities.</string>
+    <string name="takeaction_10">Follow up after your child tries a solution to see how it went.</string>
 
     <string name="waystotackle_11">Focus on identifying a solution with your child. Your attitude will influence your child. A confident, positive and resilient attitude can help to stop bullying from continuing</string>
     <string name="waystotackle_22">Fighting with the other child (as distinct from defending themselves from a physical attack) can escalate the situation, and your child may be reprimanded for their part in a fight.</string>
@@ -35,13 +36,6 @@
     <string name="waystotackle_55">Encourage your child to talk to the teacher or other staff, e.g. school guidance officer. Let them know that you will also report it to the school if the bullying doesnt stop after your child tries the strategies</string>
     <string name="waystotackle_66">Discuss with the school ways to help your child (and other students) to learn about problem solving, conflict resolution, social skills, developing resilience, dealing with strong emotions, handling difficult situations and people.</string>
 
-    <string name="law_1">Race</string>
-    <string name="law_2">Disability</string>
-    <string name="law_3">Sex</string>
-
-    <string name="law_11">The Racial Discrimination Act 1975 (Cth) (the RDA) makes it against the law to treat you unfairly because of your race, colour, descent, national or ethnic origin or immigrant status. The RDA also makes racial hatred against the law.You can use the RDA to get fair treatment in many areas of public life such as: Education – enrolling or studying in a course at a private or public school, college or university.</string>
-    <string name="law_22">The Disability Discrimination Act 1992 (Cth) (the DDA) makes it against the law to treat you unfairly because of your disability. You are also covered if you had a disability in the past, may develop a disability in the future or if people think you have a disability. People who are relatives, friends and carers of people with a disability are also protected by the DDA. You can use the DDA to get fair treatment in many areas of public life such as in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
-    <string name="law_33">The Sex Discrimination Act 1984 (Cth) (the SDA) makes it against the law to treat you unfairly because of your: sex; gender identity; intersex status; sexual orientation; marital or relationship status (including same-sex de facto couples); family responsibilities; because you are pregnant or might become pregnant; because you are breastfeeding. The SDA also makes sexual harassment against the law. You can use the SDA to get fair treatment in: Education – enrolling or studying in a course at a private or public school, college or university.</string>
     <string name="title_activity_your_kids">YourKidsActivity</string>
 
     <string name="addkidsprocedure1">* Enter the first name of your kid.</string>
@@ -56,6 +50,14 @@
     <string name="title_activity_dashboard_your_kids">DashboardYourKidsActivity</string>
     <string name="title_activity_cyber_bully_texts">CyberBullyTextsActivity</string>
     <string name="title_activity_bully_identities">BullyIdentitiesActivity</string>
-    <string name="title_activity_bully_identities_your_kids">BullyIdentitiesYourKidsActivity
-    </string>
+    <string name="title_activity_bully_identities_your_kids">BullyIdentitiesYourKidsActivity</string>
+    <string name="title_activity_take_action">TakeActionActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_counselling">CounsellingActivity</string>
+    <string name="title_activity_general_legal_information">GeneralLegalInformationActivity</string>
+    <string name="title_activity_youth_law">YouthLawActivity</string>
+    <string name="title_activity_psychological_help">PsychologicalHelpActivity</string>
+
+
 </resources>

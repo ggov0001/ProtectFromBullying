@@ -34,9 +34,14 @@ public class HomeParentActivity extends AppCompatActivity {
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_settings:
-                    Intent notificationIntent = new Intent(HomeParentActivity.this, SettingsActivity.class);
-                    startActivity(notificationIntent);
+                case R.id.navigation_yourkids:
+                    Intent yourKidsIntent = new Intent(HomeParentActivity.this, YourKidsActivity.class);
+                    startActivity(yourKidsIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                case R.id.navigation_information:
+                    Intent infromationIntent = new Intent(HomeParentActivity.this, WaysToTackleActivity.class);
+                    startActivity(infromationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }

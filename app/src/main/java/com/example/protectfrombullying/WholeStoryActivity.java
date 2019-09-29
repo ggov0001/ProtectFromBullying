@@ -25,9 +25,14 @@ public class WholeStoryActivity extends AppCompatActivity {
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_settings:
-                    Intent notificationIntent = new Intent(WholeStoryActivity.this, SettingsActivity.class);
-                    startActivity(notificationIntent);
+                case R.id.navigation_yourkids:
+                    Intent yourKidsIntent = new Intent(WholeStoryActivity.this, YourKidsActivity.class);
+                    startActivity(yourKidsIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                case R.id.navigation_information:
+                    Intent infromationIntent = new Intent(WholeStoryActivity.this, WaysToTackleActivity.class);
+                    startActivity(infromationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }

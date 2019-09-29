@@ -8,12 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,10 +62,10 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         barChart.setDrawBarShadow(false);
         barChart.setDrawGridBackground(false);
 
-        getPieData();
+        getBarData();
     }
 
-    private void getPieData()
+    private void getBarData()
     {
         GetCyberTextsDataAsyncTask getCyberTextsDataAsyncTask = new GetCyberTextsDataAsyncTask();
         getCyberTextsDataAsyncTask.execute();
@@ -85,7 +90,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
     private String getTheKidReport(String kidsId)
     {
 
-        //kidsId = "5ULJOuEGM0";
+     //   kidsId = "5Cvk5aotND";
         String baseUrl = "https://nobully-247.appspot.com/api?kidID=";
 
         URL url = null;
@@ -210,9 +215,14 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         barEntries.add(new BarEntry(4, sortedValues.get(3)));
 
         BarDataSet barDataSet = new BarDataSet(barEntries,"Social Media Platforms");
-        barDataSet.setColors(new int[]{Color.parseColor("#ff0000"), Color.parseColor("#f9530b"), Color.parseColor("#ff9005"), Color.parseColor("#fbd808")});
-
+        barDataSet.setColors(ColorTemplate.PASTEL_COLORS);
         BarData theData = new BarData(barDataSet);
+        theData.setValueFormatter(new IValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, com.github.mikephil.charting.data.Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
+                return String.valueOf((int)(value)) ;
+            }
+        });
         barChart.setData(theData);
         //barChart.invalidate();
 
@@ -220,10 +230,17 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         barChart.getAxisRight().setAxisMinimum(0);
         barChart.setDrawBarShadow(false);
         barChart.setDrawValueAboveBar(true);
-        barChart.setMaxVisibleValueCount(10);
+        //barChart.setMaxVisibleValueCount(10);
         barChart.setExtraOffsets(30,30,30,60);
         barChart.setPinchZoom(false);
         barChart.setDrawGridBackground(false);
+        barChart.getAxisLeft().setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return String.valueOf((int) Math.floor(value));
+            }
+        });
+        barChart.getAxisRight().setEnabled(false);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setGranularity(1f);
@@ -233,17 +250,19 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(0f);
         xAxis.setAxisMaximum(barEntries.size()+1);
-
         xAxis.setValueFormatter(new IndexAxisValueFormatter(sortedKey));
         barChart.getXAxis().setAxisMaximum(0 + barChart.getBarData().getGroupWidth(0.4f, 0.02f) * 5);
 
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.removeAllLimitLines();
         leftAxis.setTypeface(Typeface.DEFAULT);
-        //leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
+        leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
         leftAxis.setTextColor(Color.BLACK);
         leftAxis.setDrawGridLines(false);
-        barChart.getAxisRight().setEnabled(false);
+        leftAxis.setAxisMinimum(0f);
+        leftAxis.setGranularityEnabled(true);
+        leftAxis.setGranularity(1f);
+        leftAxis.setAxisMaximum(leftAxis.getAxisMaximum()+1);
 
         barChart.invalidate();
 

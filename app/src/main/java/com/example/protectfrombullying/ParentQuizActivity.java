@@ -20,6 +20,9 @@ public class ParentQuizActivity extends AppCompatActivity {
     private Button often;
     private Button veryoften;
 
+    //button selected color
+    private boolean selected = true;
+
     //Quiz questions
     private String questionsForQuiz[] = {
             "Is your kid losing his things these days?",
@@ -51,6 +54,7 @@ public class ParentQuizActivity extends AppCompatActivity {
         sometimes = (Button) findViewById(R.id.button_sometimes);
         often = (Button) findViewById(R.id.button_often);
         veryoften = (Button) findViewById(R.id.button_veryoften);
+
 
 
         final Intent sendQuizResult = new Intent(ParentQuizActivity.this, QuizResultActivity.class);
@@ -154,6 +158,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     startActivity(sendQuizResult);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
+
             }
         });
 

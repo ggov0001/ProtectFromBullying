@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.victor.loading.rotate.RotateLoading;
+
 public class AddKidScreenActivity extends AppCompatActivity {
 
     private EditText firstName;
@@ -19,6 +21,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
     private Button generateButton;
     private Button doneButton;
     private Button cancelButton;
+    private RotateLoading rotateLoading;
 
     String idGenerated;
     String contentsOfQRCode;
@@ -40,10 +43,11 @@ public class AddKidScreenActivity extends AppCompatActivity {
 
         database = Room.databaseBuilder(getApplicationContext(), KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
 
-
+        rotateLoading = (RotateLoading) findViewById(R.id.rotateloading);
         generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 if(!(firstName.getText().toString().matches("^[a-zA-Z]{3,10}(?: [a-zA-Z]+){0,2}$")))
                 {
@@ -52,9 +56,13 @@ public class AddKidScreenActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    if (!rotateLoading.isStart())
+                        rotateLoading.start();
                     idGenerated = getAlphaNumericString(10);
                     contentsOfQRCode = firstName.getText().toString() + "/" + idGenerated;
                     new QRCodeImageDownloader(qrCode).execute("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + contentsOfQRCode);
+                    if (rotateLoading.isStart())
+                        rotateLoading.stop();
                 }
             }
 

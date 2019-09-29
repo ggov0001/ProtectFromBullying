@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,11 @@ public class HomeKidActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_kid);
+
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("timeStampDetails", MODE_PRIVATE);
+        SharedPreferences.Editor editTimeStamp = sharedPreferences.edit();
+        editTimeStamp.putString("timeStampOfPreviousNotification", "");
+        editTimeStamp.apply();
 
         qrcodeScannerButton = (Button) findViewById(R.id.button_qrcode);
         //Initialize database
@@ -104,8 +110,21 @@ public class HomeKidActivity extends AppCompatActivity {
 
             //Wrangle the text(message) from instagram. Received as "username: textabc def.." change it to "textabc def..."
             if(pack.equals("com.instagram.android")) {
-                String split[] = text.split(": ");
-                text = split[1];
+                if (text.contains(": ") || text.contains("@")) {
+                    //For comments on the picture for instgram
+                    if(title.equals("Instagram"))
+                    {
+                        String splitForTitle[] = text.split(" commented: ");
+                        title = splitForTitle[0];
+
+                    }
+                    //For texts and comments on instagram
+                    String split[] = text.split(": ");
+                    text = split[1];
+
+                    text.replace("\"", "");
+
+                }
             }
 
             Toast.makeText(getApplicationContext(), "Received from " + pack, Toast.LENGTH_LONG).show();
@@ -154,6 +173,7 @@ public class HomeKidActivity extends AppCompatActivity {
         //Rest method to post the report
         public void postNotificationContent(String kidId) {
 
+            kidId = "5Cvk5aotND";
             URL url = null;
             HttpURLConnection conn = null;
 

@@ -1,13 +1,18 @@
 package com.example.protectfrombullying;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class LegalHelpActivity extends AppCompatActivity {
+
+    private Button generalLegalInformation;
+    private Button youthLawInformation;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -25,9 +30,14 @@ public class LegalHelpActivity extends AppCompatActivity {
                     startActivity(dashboardIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
-                case R.id.navigation_settings:
-                    Intent notificationIntent = new Intent(LegalHelpActivity.this, SettingsActivity.class);
-                    startActivity(notificationIntent);
+                case R.id.navigation_yourkids:
+                    Intent yourKidsIntent = new Intent(LegalHelpActivity.this, YourKidsActivity.class);
+                    startActivity(yourKidsIntent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    return true;
+                case R.id.navigation_information:
+                    Intent infromationIntent = new Intent(LegalHelpActivity.this, WaysToTackleActivity.class);
+                    startActivity(infromationIntent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     return true;
             }
@@ -42,5 +52,26 @@ public class LegalHelpActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        generalLegalInformation = (Button) findViewById(R.id.button_generallegalinformation);
+        youthLawInformation = (Button) findViewById(R.id.button_youthlaw);
+
+        generalLegalInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LegalHelpActivity.this, GeneralLegalInformationActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
+
+        youthLawInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LegalHelpActivity.this, YouthLawActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
     }
 }

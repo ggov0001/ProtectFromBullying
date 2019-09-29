@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PsychologicalHelpActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_above="@+id/navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="255dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/parenttalk">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:gravity="center"
+                        android:text="PSYCHOLOGICAL HELP"
+                        android:textColor="#ffff"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        app:fontFamily="sans-serif-condensed" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center"
+                        android:text="The following information provides essential insights to Psychological help."
+                        android:textColor="#ffff"
+                        android:textSize="20dp"
+                        android:typeface="normal"
+                        app:fontFamily="sans-serif-light" />
+
+                </LinearLayout>
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector_psychological1"
+                    android:layout_below="@+id/linearViewID"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+                <com.roughike.swipeselector.SwipeSelector
+                    android:id="@+id/swipeSelector_psychological2"
+                    android:layout_below="@+id/swipeSelector_psychological1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    app:swipe_titleTextAppearance="@style/FontForTitleSlider"
+                    app:swipe_descriptionTextAppearance="@style/FontForDescriptionSlider"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.protectfrombullying">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,18 +14,28 @@
         android:label="NoBully 24/7"
         android:roundIcon="@mipmap/ic_launcher_appicon_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
         <activity
-            android:name=".BullyIdentitiesYourKidsActivity"
-            android:label="NoBully 24/7"></activity>
+            android:name=".PsychologicalHelpActivity"
+            android:label="@string/title_activity_psychological_help"></activity>
+        <activity
+            android:name=".YouthLawActivity"
+            android:label="@string/title_activity_youth_law" />
+        <activity
+            android:name=".GeneralLegalInformationActivity"
+            android:label="@string/title_activity_general_legal_information" />
+        <activity
+            android:name=".CounsellingActivity"
+            android:label="@string/title_activity_counselling" />
+        <activity
+            android:name=".TakeActionActivity"
+            android:label="@string/title_activity_take_action" />
         <activity
             android:name=".BullyIdentitiesActivity"
             android:label="NoBully 24/7" />
         <activity
             android:name=".CyberBullyTextsActivity"
-            android:label="NoBully 24/7" />
-        <activity
-            android:name=".CyberBullyTextsYourKidsActivity"
             android:label="NoBully 24/7" />
         <activity
             android:name=".ReportsActivity"
@@ -38,12 +49,10 @@
             android:name=".YourKidsActivity"
             android:label="NoBully 24/7" />
         <activity android:name=".LegalHelpActivity" />
-        <activity android:name=".GeneralInformationActivity" />
         <activity android:name=".WaysToTackleActivity" />
         <activity android:name=".WholeStoryActivity" />
-        <activity android:name=".AwarenessActivity" />
+        <activity android:name=".PreventionActivity" />
         <activity android:name=".ParentTalkActivity" />
-        <activity android:name=".SettingsActivity" />
         <activity android:name=".QuizResultActivity" />
         <activity android:name=".HomeParentActivity" />
         <activity
