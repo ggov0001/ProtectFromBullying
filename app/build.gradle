@@ -11,9 +11,21 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
+    // If we perform a lint check, any error or warning will terminate the build and we can turn it off.
+    lintOptions {
+        aboutOnError false
+    }
+    
     buildTypes {
         release {
-            minifyEnabled false
+            //Don't show log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //confusion
+            minifyEnabled true
+            //optimize the Zipalign
+            zipAlignEnabled true
+            //delete useless resource file
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
