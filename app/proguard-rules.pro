@@ -89,7 +89,8 @@
 -keep class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator *;
 }
- 
+
+
 # Keep Serializable from being confused
 -keepnames class * implements java.io.Serializable
  
@@ -153,11 +154,3 @@
 -keep class com.matrix.appsdk.network.model.** { *; }
  
 
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information,uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
