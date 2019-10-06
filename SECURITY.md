@@ -208,7 +208,8 @@ Analyze Signature: 8ec121c9df27382412ffa6289e0110f12b7fb0900c23524a71062ff040008
            Did not find potentially critical local file access settings.
 [Info] <WebView> WebView Potential XSS Attacks Checking:
            Did not detect "setJavaScriptEnabled(true)" in WebView.
-[Info] <WebView><Remote Code Execution><#CVE-2013-4710#> WebView RCE Vulnerability Checking:
+[Info] <WebView><Remote Code Executi
+                       on><#CVE-2013-4710#> WebView RCE Vulnerability Checking:
            WebView addJavascriptInterface vulnerabilities not found.
 ------------------------------------------------------------
 AndroBugs analyzing time: 11.328774 secs
