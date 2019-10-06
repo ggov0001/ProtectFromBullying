@@ -27,6 +27,13 @@
  
  # Whether to log when confused
 -verbose
+-assumenosideeffects class android.util.Log{
+    public static *** v(...);
+    public static *** i(...);
+    public static *** d(...);
+    public static *** w(...);
+    public static *** e(...);
+}
  
  # The algorithm used in confusion
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
