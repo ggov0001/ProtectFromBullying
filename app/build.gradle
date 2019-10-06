@@ -19,7 +19,7 @@ android {
     buildTypes {
         release {
             //Don't show log
-            buildConfigField "boolean", "LOG", "true"
+            buildConfigField "boolean", "LOG_DEBUG", "false"
             //confusion
             minifyEnabled true
             //optimize the Zipalign
