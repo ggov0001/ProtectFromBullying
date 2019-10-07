@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -17,8 +20,17 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity
+            android:name=".KidsRecordings"
+            android:label="@string/title_activity_kids_recordings"></activity>
+        <activity
+            android:name=".TreeHoleActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ChatScreenActivity"
+            android:label="@string/title_activity_chat_screen" />
+        <activity
             android:name=".PsychologicalHelpActivity"
-            android:label="@string/title_activity_psychological_help"></activity>
+            android:label="@string/title_activity_psychological_help" />
         <activity
             android:name=".YouthLawActivity"
             android:label="@string/title_activity_youth_law" />

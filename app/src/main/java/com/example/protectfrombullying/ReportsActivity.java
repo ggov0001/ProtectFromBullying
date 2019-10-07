@@ -1,20 +1,26 @@
 package com.example.protectfrombullying;
 
+import android.app.AlertDialog;
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,10 +31,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.example.protectfrombullying.R.id.edittext_email;
+
 public class ReportsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button cyberBullyReport;
     private Button bullyIdentitiesReport;
+    private Button emailReport;
+    private Button recordings;
     private Spinner kidsSpinner;
     private TextView totalCyberBullyTexts;
 
@@ -39,7 +49,12 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
     //For sending the name and id of kid selected from the spinner to the report screen
     String kidName, kidId;
 
+    //To save emailid for the future
+    private Parent parentInfo ;
+    private List<Parent> parentList;
+
     private KidsDatabase database;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -83,12 +98,17 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
 
         cyberBullyReport = (Button) findViewById(R.id.button_iconCyberbullyTexts);
         bullyIdentitiesReport = (Button) findViewById(R.id.button_bullyIdentities);
+        emailReport = (Button) findViewById(R.id.button_email);
+        recordings = (Button) findViewById(R.id.button_recordings);
 
         kidsSpinner = (Spinner) findViewById(R.id.spinner_kids);
         kidsSpinner.setOnItemSelectedListener(this);
 
         totalCyberBullyTexts = (TextView) findViewById(R.id.textview_cyberbullytextsreceived);
         totalCyberBullyTexts.setSingleLine(false);
+
+        parentInfo = new Parent();
+        parentList = new ArrayList<Parent>();
 
         database = Room.databaseBuilder(getApplicationContext(), KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
 
@@ -110,6 +130,59 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReportsActivity.this, BullyIdentitiesActivity.class);
+                intent.putExtra("kidId", kidId);
+                intent.putExtra("kidName", kidName);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
+
+        emailReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(ReportsActivity.this)
+                        //set icon
+                        .setIcon(android.R.drawable.ic_dialog_email)
+                        //set title
+                        .setTitle("EMAIL ID")
+                        //set message
+                        .setMessage("Please create a new email ID or use the previously used email ID and click 'Confirm' to send the email..");
+
+                final LayoutInflater inflater = LayoutInflater.from(ReportsActivity.this);
+                View viewForDialogBox = inflater.inflate(R.layout.parent_dialoginfo, null);
+                final EditText emailIdSet = (EditText) viewForDialogBox.findViewById(edittext_email);
+
+                if(parentInfo != null)
+                    emailIdSet.setText(parentInfo.getEmailId());
+                else
+                    emailIdSet.setText("");
+                alertDialog.setView(viewForDialogBox);
+
+           //     alertDialog.setView(input);
+
+                //set positive button
+                alertDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                updateEmail(emailIdSet);
+
+                            }
+                        });
+                        //set negative button
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(ReportsActivity.this,"Not Deleted!",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
+
+        recordings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportsActivity.this, KidsRecordings.class);
                 intent.putExtra("kidId", kidId);
                 intent.putExtra("kidName", kidName);
                 startActivity(intent);
@@ -152,8 +225,133 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
             adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, kids);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             kidsSpinner.setAdapter(adapter);
+
+            GetEmailIDOfParent getEmailIDOfParent = new GetEmailIDOfParent();
+            getEmailIDOfParent.execute();
         }
     }
+
+    //Get email id
+    private class GetEmailIDOfParent extends AsyncTask<String, Void, List<Parent>> {
+        @Override
+        protected List<Parent> doInBackground(String... strings) {
+            parentList = database.parentDAO().getAll();
+          return parentList;
+        }
+        @Override
+        protected void onPostExecute(List<Parent> parentList)
+        {
+            if(parentList.size() != 0)
+            {
+                parentInfo = parentList.get(0);
+            }
+
+        }
+    }
+
+    private void updateEmail(EditText emailIdEditText)
+    {
+        if(!(emailIdEditText.getText().toString().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))) {
+            emailIdEditText.setError("Please enter a valid email address.");
+            emailIdEditText.requestFocus();
+        }
+        else
+        {
+            if(parentList.size() == 0)
+            {
+                AddEmailIdtoDatabase addEmailIdtoDatabase = new AddEmailIdtoDatabase();
+                addEmailIdtoDatabase.execute(emailIdEditText.getText().toString());
+            }
+            else
+            {
+                UpdateEmailInDatabase updateEmailInDatabase = new UpdateEmailInDatabase();
+                updateEmailInDatabase.execute(emailIdEditText.getText().toString());
+            }
+        }
+    }
+
+    //Add email id
+    private class AddEmailIdtoDatabase extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... emailIDEntered) {
+            parentInfo.setEmailId(emailIDEntered[0]);
+            database.parentDAO().insert(parentInfo);
+
+            return emailIDEntered[0];
+        }
+
+        @Override
+        protected void onPostExecute(String emailId) {
+            SendEmailAsync sendEmailAsync = new SendEmailAsync();
+            sendEmailAsync.execute(emailId);
+        }
+    }
+
+    //Update email id
+    private class UpdateEmailInDatabase extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... emailIDEntered) {
+            if(!emailIDEntered[0].equals(parentInfo))
+            {
+                parentInfo.setEmailId(emailIDEntered[0]);
+                database.parentDAO().updateParentEmailId(parentInfo);
+            }
+            return emailIDEntered[0];
+        }
+        @Override
+        protected void onPostExecute(String emailId) {
+            SendEmailAsync sendEmailAsync = new SendEmailAsync();
+            sendEmailAsync.execute(emailId);
+        }
+    }
+
+    //Send to email
+    private class SendEmailAsync extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... emailIDEntered) {
+            sendEmail(emailIDEntered[0]);
+            return null;
+        }
+        @Override
+        protected void onPostExecute(String emailId) {
+            Toast.makeText(ReportsActivity.this,"Email Sent!",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    //Send email
+    private void sendEmail(String emailId)
+    {
+        //kidsId = "5Cvk5aotND";
+        String baseUrl = "https://nobully-247.appspot.com/email?kidID=";
+
+        URL url = null;
+        HttpURLConnection conn = null;
+
+        String parameters = "\"" + kidId + "\"" + "&email=" + emailId + "&kidNAME=" + kidName;
+
+        //Making HTTP Request
+        try{
+            url = new URL(baseUrl + parameters);
+            conn = (HttpURLConnection) url.openConnection(); //opening the connection
+
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(15000);
+
+            conn.setRequestMethod("GET"); //Connection method is set to Get
+
+            conn.setRequestProperty("Content-Type","application/json");
+            conn.setRequestProperty("Accept","application/json"); //adding http headers to set response to json
+
+            Log.i("error", new Integer(conn.getResponseCode()).toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally{
+            conn.disconnect();
+        }
+    }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -172,7 +370,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
 
         @Override
         protected String doInBackground(String... params) {
-            return getTheKidReport(kidId);
+            return getTheKidReport();
         }
 
         @Override
@@ -184,37 +382,37 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
                 JSONObject jsonObject = new JSONObject(report);
 
                 //Messages - Different phones have different package names for message.
-                if(jsonObject.has("com.google.android.apps.messaging"))
+                if(jsonObject.has("Text Message"))
                 {
-                    numberOfTexts[0] = jsonObject.getInt("com.google.android.apps.messaging");
+                    numberOfTexts[0] = jsonObject.getInt("Text Message");
                 }
 
-                if(jsonObject.has("com.samsung.android.messaging"))
-                {
-                    numberOfTexts[0] = jsonObject.getInt("com.samsung.android.messaging");
-                }
-
-                if(jsonObject.has("com.android.mms"))
-                {
-                    numberOfTexts[0] = jsonObject.getInt("com.android.mms");
-                }
+//                if(jsonObject.has("com.samsung.android.messaging"))
+//                {
+//                    numberOfTexts[0] = jsonObject.getInt("com.samsung.android.messaging");
+//                }
+//
+//                if(jsonObject.has("com.android.mms"))
+//                {
+//                    numberOfTexts[0] = jsonObject.getInt("com.android.mms");
+//                }
 
                 //Instagram
-                if(jsonObject.has("com.instagram.android"))
+                if(jsonObject.has("Instagram"))
                 {
-                    numberOfTexts[1] = jsonObject.getInt("com.instagram.android");
+                    numberOfTexts[1] = jsonObject.getInt("Instagram");
                 }
 
                 //Facebook messenger
-                if(jsonObject.has("com.facebook.orca"))
+                if(jsonObject.has("Facebook Messenger"))
                 {
-                    numberOfTexts[2] = jsonObject.getInt("com.facebook.orca");
+                    numberOfTexts[2] = jsonObject.getInt("Facebook Messenger");
                 }
 
                 //Whatsapp
-                if(jsonObject.has("com.whatsapp"))
+                if(jsonObject.has("Whatsapp"))
                 {
-                    numberOfTexts[3] = jsonObject.getInt("com.whatsapp");
+                    numberOfTexts[3] = jsonObject.getInt("Whatsapp");
                 }
 
             } catch (JSONException e) {
@@ -231,7 +429,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
     }
 
 
-    private String getTheKidReport(String kidsId)
+    private String getTheKidReport()
     {
         //kidsId = "5Cvk5aotND";
         String baseUrl = "https://nobully-247.appspot.com/api?kidID=";
@@ -240,11 +438,11 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
         HttpURLConnection conn = null;
         String result = "";
 
-        kidsId = "\"" + kidsId + "\"" + "&getID=0";
+         String parameters = "\"" + kidId + "\"" + "&getID=0";
 
         //Making HTTP Request
         try{
-            url = new URL(baseUrl + kidsId);
+            url = new URL(baseUrl + parameters);
             conn = (HttpURLConnection) url.openConnection(); //opening the connection
 
             conn.setReadTimeout(10000);

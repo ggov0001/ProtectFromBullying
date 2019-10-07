@@ -136,38 +136,38 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(report);
 
-            //Messages - Different phones have different package names for message.
-            if(jsonObject.has("com.google.android.apps.messaging"))
+            //Messages
+            if(jsonObject.has("Text Message"))
             {
-                value[0] = jsonObject.getInt("com.google.android.apps.messaging");
+                value[0] = jsonObject.getInt("Text Message");
             }
 
-            if(jsonObject.has("com.samsung.android.messaging"))
-            {
-                value[0] = jsonObject.getInt("com.samsung.android.messaging");
-            }
-
-            if(jsonObject.has("com.android.mms"))
-            {
-                value[0] = jsonObject.getInt("com.android.mms");
-            }
+//            if(jsonObject.has("com.samsung.android.messaging"))
+//            {
+//                value[0] = jsonObject.getInt("com.samsung.android.messaging");
+//            }
+//
+//            if(jsonObject.has("com.android.mms"))
+//            {
+//                value[0] = jsonObject.getInt("com.android.mms");
+//            }
 
             //Instagram
-            if(jsonObject.has("com.instagram.android"))
+            if(jsonObject.has("Instagram"))
             {
-                value[1] = jsonObject.getInt("com.instagram.android");
+                value[1] = jsonObject.getInt("Instagram");
             }
 
             //Facebook messenger
-            if(jsonObject.has("com.facebook.orca"))
+            if(jsonObject.has("Facebook Messenger"))
             {
-                value[2] = jsonObject.getInt("com.facebook.orca");
+                value[2] = jsonObject.getInt("Facebook Messenger");
             }
 
             //Whatsapp
-            if(jsonObject.has("com.whatsapp"))
+            if(jsonObject.has("Whatsapp"))
             {
-                value[3] = jsonObject.getInt("com.whatsapp");
+                value[3] = jsonObject.getInt("Whatsapp");
             }
 
         } catch (JSONException e) {

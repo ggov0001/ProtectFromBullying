@@ -135,7 +135,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
                     JSONObject entriesInJson = jArray.getJSONObject(i);
 
                     //Platform: Whatsapp
-                    if(entriesInJson.getString("platform").equals("com.whatsapp"))
+                    if(entriesInJson.getString("platform").equals("Whatsapp"))
                     {
                         BullyIdentitiesPlatform bullyIdentitiesPlatform = new BullyIdentitiesPlatform();
                         bullyIdentitiesPlatform.setPlatform("Whatsapp");
@@ -148,9 +148,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
                     }
 
                     //Platform message
-                    if(entriesInJson.getString("platform").equals("com.google.android.apps.messaging") ||
-                            entriesInJson.getString("platform").equals("com.samsung.android.messaging")||
-                            entriesInJson.getString("platform").equals("com.android.mms"))
+                    if(entriesInJson.getString("platform").equals("Text Message"))
                     {
                         BullyIdentitiesPlatform bullyIdentitiesPlatform = new BullyIdentitiesPlatform();
                         bullyIdentitiesPlatform.setPlatform("Messages");
@@ -163,7 +161,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
                     }
 
                     //Platform: Instagram
-                    if(entriesInJson.getString("platform").equals("com.instagram.android"))
+                    if(entriesInJson.getString("platform").equals("Instagram"))
                     {
                         BullyIdentitiesPlatform bullyIdentitiesPlatform = new BullyIdentitiesPlatform();
                         bullyIdentitiesPlatform.setPlatform("Instagram");
@@ -176,7 +174,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
                     }
 
                     //Platform: Facebook Messenger
-                    if(entriesInJson.getString("platform").equals("com.facebook.orca"))
+                    if(entriesInJson.getString("platform").equals("Facebook Messenger"))
                     {
                         BullyIdentitiesPlatform bullyIdentitiesPlatform = new BullyIdentitiesPlatform();
                         bullyIdentitiesPlatform.setPlatform("Facebook Messenger");

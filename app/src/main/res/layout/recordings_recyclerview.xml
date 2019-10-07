@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
@@ -12,7 +9,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/button_kids"
+            android:id="@+id/button_recordings"
             android:background="@drawable/custom_button_cards"/>
 
 
@@ -23,22 +20,22 @@
 
 
             <ImageView
-                android:id="@+id/imageView_iconKids"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:id="@+id/imageView_recordings"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:padding="4dp"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/boy"/>
+                android:src="@drawable/playrecording"/>
 
             <TextView
-                android:id="@+id/textView_kidname"
+                android:id="@+id/textView_recordingName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35dp"
-                android:layout_toRightOf="@id/imageView_iconKids"
+                android:layout_toRightOf="@id/imageView_recordings"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_marginTop="25dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:textColor="#000000" />
 
 

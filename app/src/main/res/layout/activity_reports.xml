@@ -94,7 +94,7 @@
                                     android:id="@+id/imageView_iconCyberbullyTexts"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/icon_piechart"
+                                    android:src="@drawable/iconbarchart"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -135,7 +135,7 @@
                                     android:id="@+id/imageView_iconIdentities"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/icons_barchart"
+                                    android:src="@drawable/iconbarchart"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -184,7 +184,7 @@
                                     android:id="@+id/imageView_iconemail"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/icons_barchart"
+                                    android:src="@drawable/sendemail"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -223,7 +223,7 @@
                                     android:id="@+id/imageView_iconrecordiong"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/icons_barchart"
+                                    android:src="@drawable/playrecording"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView

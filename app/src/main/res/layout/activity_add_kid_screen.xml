@@ -6,158 +6,157 @@
     android:layout_height="match_parent"
     tools:context=".AddKidScreenActivity">
 
+        <TextView
+            android:id="@+id/textView_addkids"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ADD YOUR KID"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-condensed" />
 
-    <TextView
-        android:id="@+id/textView_addkids"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="ADD YOUR KID"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-condensed" />
+        <TextView
+            android:id="@+id/textView_addkidsprocedure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROCEDURE:"
+            android:layout_below="@+id/textView_addkids"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-condensed" />
 
-    <TextView
-        android:id="@+id/textView_addkidsprocedure"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PROCEDURE:"
-        android:layout_below="@+id/textView_addkids"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-condensed" />
+        <TextView
+            android:id="@+id/textView_addkidsproceduredetails1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_addkidsprocedure"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/addkidsprocedure1"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView_addkidsproceduredetails1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_addkidsprocedure"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/addkidsprocedure1"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_addkidsproceduredetails2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_addkidsproceduredetails1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/addkidsprocedure2"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView_addkidsproceduredetails2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_addkidsproceduredetails1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/addkidsprocedure2"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_addkidsproceduredetails3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_addkidsproceduredetails2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/addkidsprocedure3"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView_addkidsproceduredetails3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_addkidsproceduredetails2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/addkidsprocedure3"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_addkidsproceduredetails4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_addkidsproceduredetails3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/addkidsprocedure4"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textView_addkidsproceduredetails4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_addkidsproceduredetails3"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/addkidsprocedure4"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_addkidsproceduredetails4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="YOUR KID's NAME:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-condensed"/>
 
-    <TextView
-        android:id="@+id/textView_firstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_addkidsproceduredetails4"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="25dp"
-        android:text="YOUR KID's NAME:"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-condensed"/>
+        <EditText
+            android:id="@+id/register_firstName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_firstName"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/register_firstName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_firstName"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:textSize="18sp"
-        android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/button_generateqrcode"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="GENERATE"
+            android:background="@drawable/custom_button_quiz"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/register_firstName"
+            android:layout_below="@+id/textView_firstName"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-medium"/>
 
-    <Button
-        android:id="@+id/button_generateqrcode"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="GENERATE"
-        android:background="@drawable/custom_button_quiz"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/register_firstName"
-        android:layout_below="@+id/textView_firstName"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-medium"/>
+        <ImageView
+            android:id="@+id/imageview_qrcode"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/button_generateqrcode"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
 
-    <ImageView
-        android:id="@+id/imageview_qrcode"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/button_generateqrcode"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/button_doneqrcode"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="DONE"
+            android:background="@drawable/custom_button_quiz"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/imageview_qrcode"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-medium"/>
 
-    <Button
-        android:id="@+id/button_doneqrcode"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:text="DONE"
-        android:background="@drawable/custom_button_quiz"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="70dp"
-        android:layout_below="@+id/imageview_qrcode"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-medium"/>
+        <Button
+            android:id="@+id/button_cancelqrcode"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="CANCEL"
+            android:background="@drawable/custom_button_quiz"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_below="@+id/imageview_qrcode"
+            android:layout_toRightOf="@+id/button_doneqrcode"
+            android:typeface="normal"
+            app:fontFamily="sans-serif-medium"/>
 
-    <Button
-        android:id="@+id/button_cancelqrcode"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:text="CANCEL"
-        android:background="@drawable/custom_button_quiz"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@+id/imageview_qrcode"
-        android:layout_toRightOf="@+id/button_doneqrcode"
-        android:typeface="normal"
-        app:fontFamily="sans-serif-medium"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/abc"
+            android:layout_below="@+id/button_cancelqrcode"
+            android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/abc"
-        android:layout_below="@+id/button_cancelqrcode"
-        android:layout_marginTop="10dp"/>
-
-    <com.victor.loading.rotate.RotateLoading
-        android:id="@+id/rotateloading"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:loading_width="5dp"
-        app:loading_color="@color/design_default_color_primary"
-        android:layout_centerInParent="true" />
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/rotateloading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:loading_width="5dp"
+            app:loading_color="@color/design_default_color_primary"
+            android:layout_centerInParent="true" />
 
 </RelativeLayout>

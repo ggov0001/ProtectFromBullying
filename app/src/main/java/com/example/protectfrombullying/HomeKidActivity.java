@@ -28,6 +28,7 @@ public class HomeKidActivity extends AppCompatActivity {
 
     //Declare all buttons in the home screen
     private Button qrcodeScannerButton;
+    private Button treeHoleButton;
 
 
     private KidsDatabase database;
@@ -40,6 +41,7 @@ public class HomeKidActivity extends AppCompatActivity {
     private String title;
     private String text;
     private String ticker;
+    private String kidId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class HomeKidActivity extends AppCompatActivity {
         editTimeStamp.apply();
 
         qrcodeScannerButton = (Button) findViewById(R.id.button_qrcode);
+        treeHoleButton = (Button) findViewById(R.id.button_treehole);
         //Initialize database
         database = Room.databaseBuilder(getApplicationContext(), KidsDatabase.class, "KidsDatabase").fallbackToDestructiveMigration().build();
 
@@ -62,6 +65,14 @@ public class HomeKidActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeKidActivity.this, KidsQRScanActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
+
+        treeHoleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GetKidIDAsync getKidIDAsync = new GetKidIDAsync();
+                getKidIDAsync.execute();
             }
         });
 
@@ -108,8 +119,26 @@ public class HomeKidActivity extends AppCompatActivity {
             Log.i("receive Title",title);
             Log.i("receive Text",text);
 
+            if(pack.equals("com.google.android.apps.messaging") || pack.equals("com.samsung.android.messaging") ||
+                    pack.equals("com.android.mms"))
+            {
+                pack = "Text Message";
+            }
+            if(pack.equals("com.instagram.android"))
+            {
+                pack = "Instagram";
+            }
+            if(pack.equals("com.facebook.orca"))
+            {
+                pack = "Facebook Messenger";
+            }
+            if(pack.equals("com.whatsapp"))
+            {
+                pack = "Whatsapp";
+            }
+
             //Wrangle the text(message) from instagram. Received as "username: textabc def.." change it to "textabc def..."
-            if(pack.equals("com.instagram.android")) {
+            if(pack.equals("Instagram")) {
                 if (text.contains(": ") || text.contains("@")) {
                     //For comments on the picture for instgram
                     if(title.equals("Instagram"))
@@ -129,9 +158,8 @@ public class HomeKidActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "Received from " + pack, Toast.LENGTH_LONG).show();
 
-            if(pack.equals("com.google.android.apps.messaging") || pack.equals("com.samsung.android.messaging") ||
-            pack.equals("com.android.mms") || pack.equals("com.instagram.android") || pack.equals("com.facebook.orca") ||
-            pack.equals("com.whatsapp"))
+            if(pack.equals("Text Message") || pack.equals("Instagram") || pack.equals("Facebook Messenger") ||
+            pack.equals("Whatsapp"))
             {
                 GetKidInfoAsync getKidInfoAsync = new GetKidInfoAsync();
                 getKidInfoAsync.execute();
@@ -148,6 +176,7 @@ public class HomeKidActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(List<Kids> kidInfo) {
+                kidId = kidInfo.get(0).getKidId();
                 PostNotificationContentAsync postNotificationContentAsync = new PostNotificationContentAsync();
                 postNotificationContentAsync.execute(kidInfo.get(0).getKidId());
             }
@@ -173,7 +202,7 @@ public class HomeKidActivity extends AppCompatActivity {
         //Rest method to post the report
         public void postNotificationContent(String kidId) {
 
-            kidId = "5Cvk5aotND";
+        //    kidId = "5Cvk5aotND";
             URL url = null;
             HttpURLConnection conn = null;
 
@@ -191,7 +220,7 @@ public class HomeKidActivity extends AppCompatActivity {
 
                 //Current date and time
                 Date date = Calendar.getInstance().getTime();
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
 
                 //post data
@@ -218,6 +247,23 @@ public class HomeKidActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    private class GetKidIDAsync extends AsyncTask<String, Void, List<Kids> > {
+
+        @Override
+        protected List<Kids> doInBackground(String... strings) {
+            return database.kidsDAO().getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<Kids> kidInfo) {
+            kidId = kidInfo.get(0).getKidId();
+            Intent intent = new Intent(HomeKidActivity.this, TreeHoleActivity.class);
+            intent.putExtra("kidId", kidId);
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
     }
 
 }

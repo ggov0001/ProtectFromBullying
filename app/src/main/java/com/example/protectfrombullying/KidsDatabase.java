@@ -5,12 +5,14 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(entities = {Kids.class, LoggedIn.class}, version = 3, exportSchema = false)
+@Database(entities = {Kids.class, LoggedIn.class, Parent.class}, version = 3, exportSchema = false)
 public abstract class KidsDatabase extends RoomDatabase {
 
     public abstract KidsDAO kidsDAO();
 
     public abstract LoggedInDAO loggedInDAO();
+
+    public abstract ParentDAO parentDAO();
 
     private static volatile KidsDatabase INSTANCE;
 

@@ -2,6 +2,7 @@ package com.example.protectfrombullying;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -70,8 +71,30 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
                 deleteDialogButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DeleteKidAsync deleteKidAsync = new DeleteKidAsync();
-                        deleteKidAsync.execute(position);
+                            android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(context)
+                                //set icon
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                //set title
+                                .setTitle("Are you sure to Delete?")
+                                //set message
+                                .setMessage("Deleting your kid will delete all the records.")
+                                //set positive button
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        DeleteKidAsync deleteKidAsync = new DeleteKidAsync();
+                                        deleteKidAsync.execute(position);
+                                    }
+                                })
+                                //set negative button
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(context,"Not Deleted!",Toast.LENGTH_LONG).show();
+                                    }
+                                })
+                                .show();
+
                     }
                 });
 

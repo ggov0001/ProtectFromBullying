@@ -72,15 +72,19 @@ public class AddKidScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(firstName.getText().toString().matches("^[a-zA-Z]{3,10}(?: [a-zA-Z]+){0,2}$")))
+                if(idGenerated == null)
                 {
-                    firstName.setError("Name can only have alphabets with a minimum of 3 and a maximum of 10.");
-                    firstName.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Please select 'Generate' before 'Done'!", Toast.LENGTH_LONG).show();
                 }
-                else
-                {
-                    AddKid addKid = new AddKid();
-                    addKid.execute();
+
+                else {
+                    if (!(firstName.getText().toString().matches("^[a-zA-Z]{3,10}(?: [a-zA-Z]+){0,2}$"))) {
+                        firstName.setError("Name can only have alphabets with a minimum of 3 and a maximum of 10.");
+                        firstName.requestFocus();
+                    } else {
+                        AddKid addKid = new AddKid();
+                        addKid.execute();
+                    }
                 }
             }
         });
@@ -130,6 +134,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             Kids kids = new Kids(idGenerated, firstName.getText().toString());
+//            kids.setKidId("hWyi8uN3sg");
             database.kidsDAO().insert(kids);
 
             return null;

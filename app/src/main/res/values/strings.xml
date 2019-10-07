@@ -36,8 +36,8 @@
     <string name="waystotackle_55">Encourage your child to talk to the teacher or other staff, e.g. school guidance officer. Let them know that you will also report it to the school if the bullying doesnt stop after your child tries the strategies</string>
     <string name="waystotackle_66">Discuss with the school ways to help your child (and other students) to learn about problem solving, conflict resolution, social skills, developing resilience, dealing with strong emotions, handling difficult situations and people.</string>
 
-    <string name="title_activity_your_kids">YourKidsActivity</string>
 
+    <string name="title_activity_your_kids">YourKidsActivity</string>
     <string name="addkidsprocedure1">* Enter the first name of your kid.</string>
     <string name="addkidsprocedure2">* Click on "Generate" to generate the QR code.</string>
     <string name="addkidsprocedure3">* The QR code contains the kid name and a unique identifier.</string>
@@ -58,6 +58,9 @@
     <string name="title_activity_general_legal_information">GeneralLegalInformationActivity</string>
     <string name="title_activity_youth_law">YouthLawActivity</string>
     <string name="title_activity_psychological_help">PsychologicalHelpActivity</string>
+    <string name="title_activity_chat_screen">ChatScreenActivity</string>
+    <string name="title_activity_tree_hole">TreeHoleActivity</string>
+    <string name="title_activity_kids_recordings">KidsRecordings</string>
 
 
 </resources>
