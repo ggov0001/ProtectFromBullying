@@ -7,9 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -21,28 +20,28 @@
         tools:replace="android:label">
         <activity
             android:name=".KidsRecordings"
-            android:label="@string/title_activity_kids_recordings"></activity>
+            android:label="NoBully 24/7"></activity>
         <activity
             android:name=".TreeHoleActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ChatScreenActivity"
-            android:label="@string/title_activity_chat_screen" />
+            android:label="Winnie" />
         <activity
             android:name=".PsychologicalHelpActivity"
-            android:label="@string/title_activity_psychological_help" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".YouthLawActivity"
-            android:label="@string/title_activity_youth_law" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".GeneralLegalInformationActivity"
-            android:label="@string/title_activity_general_legal_information" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".CounsellingActivity"
-            android:label="@string/title_activity_counselling" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".TakeActionActivity"
-            android:label="@string/title_activity_take_action" />
+            android:label="NoBully 24/7" />
         <activity
             android:name=".BullyIdentitiesActivity"
             android:label="NoBully 24/7" />
@@ -60,16 +59,22 @@
         <activity
             android:name=".YourKidsActivity"
             android:label="NoBully 24/7" />
-        <activity android:name=".LegalHelpActivity" />
-        <activity android:name=".WaysToTackleActivity" />
-        <activity android:name=".WholeStoryActivity" />
-        <activity android:name=".PreventionActivity" />
-        <activity android:name=".ParentTalkActivity" />
-        <activity android:name=".QuizResultActivity" />
-        <activity android:name=".HomeParentActivity" />
-        <activity
-            android:name=".ParentQuizActivity"
-            android:label="NoBully 24/7" />
+        <activity android:name=".LegalHelpActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".WaysToTackleActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".WholeStoryActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".PreventionActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".ParentTalkActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".QuizResultActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".HomeParentActivity"
+            android:label="NoBully 24/7"/>
+        <activity android:name=".ParentQuizActivity"
+            android:label="NoBully 24/7"/>
         <activity
             android:name=".UserTypeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

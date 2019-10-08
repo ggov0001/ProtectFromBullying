@@ -1,5 +1,6 @@
 package com.example.protectfrombullying;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -42,6 +43,14 @@ public class HomeKidActivity extends AppCompatActivity {
     private String text;
     private String ticker;
     private String kidId;
+
+    //Back
+    @SuppressLint("NewApi")
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/holo_green_dark"
+        android:textColor="@color/blue"
         android:textSize="20sp"
         android:typeface="sans"
         app:fontFamily="sans-serif-condensed" />

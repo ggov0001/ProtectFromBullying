@@ -37,18 +37,20 @@
                     android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/parenttalk">
+                    android:background="@drawable/waystotackle">
 
                     <TextView
+                        android:layout_height="310dp"
                         android:layout_width="match_parent"
-                        android:layout_height="255dp"
                         android:gravity="center"
                         android:text="WAYS TO TACKLE"
+                        android:textColor="#000"
                         android:textSize="25dp"
-                        android:textColor="#ffff"
                         android:textStyle="bold"
                         android:typeface="normal"
                         app:fontFamily="sans-serif-condensed" />
+
+
 
                 </LinearLayout>
 

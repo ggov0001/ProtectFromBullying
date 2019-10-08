@@ -60,7 +60,7 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
 
         //Heading set
         bullyIdentitiesHeading = (TextView) findViewById(R.id.textView_bullyIdentitiesHeading);
-        bullyIdentitiesHeading.setText("Bully Identities (with number of texts sent) - who cyberbullied " + getIntent().getStringExtra("kidName") + " !");
+        bullyIdentitiesHeading.setText("Identities who have cyberbullied " + getIntent().getStringExtra("kidName") + " on various social media platforms!");
 
         //Barchart
         barChart = (BarChart) findViewById(R.id.bargraph_BullyIdentitiestexts);

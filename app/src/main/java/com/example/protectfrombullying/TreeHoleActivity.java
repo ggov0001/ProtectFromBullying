@@ -98,7 +98,7 @@ public class TreeHoleActivity extends AppCompatActivity {
                 myAudioRecorder.stop();
                 myAudioRecorder.release();
                 myAudioRecorder = null;
-                record.setEnabled(true);
+                record.setEnabled(false);
                 stop.setEnabled(false);
 //                play.setEnabled(true);
 

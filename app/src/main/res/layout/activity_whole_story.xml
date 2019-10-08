@@ -35,7 +35,7 @@
                 <LinearLayout
                     android:id="@+id/linearViewID"
                     android:layout_width="match_parent"
-                    android:layout_height="255dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/parenttalk">
@@ -43,10 +43,10 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="220dp"
                         android:gravity="center"
                         android:text="THE WHOLE STORY"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="25dp"
                         android:textStyle="bold"
                         android:typeface="normal"
@@ -57,7 +57,7 @@
                         android:layout_height="80dp"
                         android:gravity="center"
                         android:text="Follow all these guidelines"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="20dp"
                         android:typeface="normal"
                         app:fontFamily="sans-serif-light" />

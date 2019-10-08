@@ -37,21 +37,23 @@
                 <LinearLayout
                     android:id="@+id/linearViewID"
                     android:layout_width="match_parent"
-                    android:layout_height="255dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/parenttalk">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="255dp"
+                        android:layout_height="150dp"
                         android:gravity="center"
                         android:text="PREVENTION STARTS WITH AWARENESS"
                         android:textSize="25dp"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textStyle="bold"
                         android:typeface="normal"
                         app:fontFamily="sans-serif-condensed" />
+
+
 
                 </LinearLayout>
 

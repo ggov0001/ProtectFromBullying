@@ -134,7 +134,7 @@ public class AddKidScreenActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             Kids kids = new Kids(idGenerated, firstName.getText().toString());
-//            kids.setKidId("hWyi8uN3sg");
+    //        kids.setKidId("JFySYfsjNK");
             database.kidsDAO().insert(kids);
 
             return null;

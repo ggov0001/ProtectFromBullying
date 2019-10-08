@@ -210,12 +210,16 @@ public class ChatScreenActivity extends AppCompatActivity {
                             answer1.setText("NO");
 
                             typingAvi1.show();
+                        yesButton.setVisibility(View.INVISIBLE);
+                        noButton.setVisibility(View.INVISIBLE);
 
                             new Handler().postDelayed(new Runnable() {
 
                                 @Override
                                 public void run() {
                                     typingAvi1.hide();
+                                    yesButton.setVisibility(View.VISIBLE);
+                                    noButton.setVisibility(View.VISIBLE);
 
                                     bot2.setVisibility(View.VISIBLE);
                                     question2.setVisibility(View.VISIBLE);
@@ -236,12 +240,16 @@ public class ChatScreenActivity extends AppCompatActivity {
                             answer2.setText("NO");
 
                             typingAvi2.show();
+                        yesButton.setVisibility(View.INVISIBLE);
+                        noButton.setVisibility(View.INVISIBLE);
 
                             new Handler().postDelayed(new Runnable() {
 
                                 @Override
                                 public void run() {
                                     typingAvi2.hide();
+                                    yesButton.setVisibility(View.VISIBLE);
+                                    noButton.setVisibility(View.VISIBLE);
 
                                     bot3.setVisibility(View.VISIBLE);
                                     question3.setVisibility(View.VISIBLE);
@@ -261,12 +269,16 @@ public class ChatScreenActivity extends AppCompatActivity {
                             answer3.setText("NO");
 
                             typingAvi3.show();
+                        yesButton.setVisibility(View.INVISIBLE);
+                        noButton.setVisibility(View.INVISIBLE);
 
                             new Handler().postDelayed(new Runnable() {
 
                                 @Override
                                 public void run() {
                                     typingAvi3.hide();
+                                    yesButton.setVisibility(View.VISIBLE);
+                                    noButton.setVisibility(View.VISIBLE);
 
                                     bot4.setVisibility(View.VISIBLE);
                                     finalmessage3.setVisibility(View.VISIBLE);
@@ -415,6 +427,13 @@ public class ChatScreenActivity extends AppCompatActivity {
         } finally {
             conn.disconnect();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ChatScreenActivity.this, HomeKidActivity.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 }

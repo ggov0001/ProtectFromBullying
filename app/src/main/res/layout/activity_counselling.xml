@@ -37,10 +37,10 @@
                 <LinearLayout
                     android:id="@+id/linearViewID"
                     android:layout_width="match_parent"
-                    android:layout_height="255dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/parenttalk">
+                    android:background="@drawable/counsellingsupport">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                         android:gravity="center"
                         android:text="COUNSELLING AND SUPPORT"
                         android:textSize="25dp"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textStyle="bold"
                         android:typeface="normal"
                         app:fontFamily="sans-serif-condensed" />

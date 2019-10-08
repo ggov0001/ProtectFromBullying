@@ -53,7 +53,7 @@ public class CyberBullyTextsActivity extends AppCompatActivity {
 
 
         cyberBullyScreenHeading = (TextView) findViewById(R.id.textView_cyberbullytextheading);
-        cyberBullyScreenHeading.setText("CyberBully Texts Stats for " + getIntent().getStringExtra("kidName") + " !");
+        cyberBullyScreenHeading.setText("Cyberbully Messages received by " + getIntent().getStringExtra("kidName") + " from various social media platforms!");
 
         barChart = (BarChart) findViewById(R.id.bargraph_cyberbullytexts);
         barChart.setDescription(null);
