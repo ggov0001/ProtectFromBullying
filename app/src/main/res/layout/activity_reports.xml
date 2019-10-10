@@ -229,7 +229,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Play Recordings"
+                                    android:text="What my kid says"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageView_iconrecordiong"
                                     android:layout_centerHorizontal="true"

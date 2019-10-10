@@ -87,7 +87,7 @@ public class TreeHoleActivity extends AppCompatActivity {
 
                 record.setEnabled(false);
                 stop.setEnabled(true);
-                Toast.makeText(getApplicationContext(), "Recording started", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "I am Listening!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -107,28 +107,6 @@ public class TreeHoleActivity extends AppCompatActivity {
             }
         });
 
-//        play.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final MediaPlayer mediaPlayer = new MediaPlayer();
-//                try {
-//                    mediaPlayer.setDataSource(String.valueOf(downloadUrl));
-//                    mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                        @Override
-//                        public void onPrepared(MediaPlayer mp) {
-//                            mediaPlayer.start();
-//                        }
-//                    });
-//
-//                    mediaPlayer.prepare();
-////                    mediaPlayer.start();
-//                    Toast.makeText(getApplicationContext(), "Playing Audio", Toast.LENGTH_LONG).show();
-//                } catch (Exception e) {
-//
-//                }
-//            }
-//        });
-
 
     }
 
@@ -143,7 +121,7 @@ public class TreeHoleActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 animationVideoEnd.stopPlayback();
-                Toast.makeText(getApplicationContext(), "Audio Recorded successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Thank you for Talking It Out!", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(TreeHoleActivity.this, ChatScreenActivity.class);
                 intent.putExtra("outputFile", outputFile);
                 intent.putExtra("kidId", getIntent().getStringExtra("kidId"));

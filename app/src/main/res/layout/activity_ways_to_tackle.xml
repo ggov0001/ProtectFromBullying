@@ -84,7 +84,7 @@
                                     android:id="@+id/imageView_iconQuiz"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconquiz"
+                                    android:src="@drawable/iconswarning"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -124,7 +124,7 @@
                                     android:id="@+id/imageView_iconKids"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconboy"
+                                    android:src="@drawable/counselling"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -172,7 +172,7 @@
                                     android:id="@+id/imageView_iconTackle"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconstackle"
+                                    android:src="@drawable/law"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -211,7 +211,7 @@
                                     android:id="@+id/imageView_iconTalkToKids"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconcommunicate"
+                                    android:src="@drawable/psychologist"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView

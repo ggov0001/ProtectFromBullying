@@ -78,8 +78,6 @@ public class BullyIdentitiesActivity extends AppCompatActivity implements Adapte
         //GET
         GetCyberTextsDataAsyncTask getCyberTextsDataAsyncTask = new GetCyberTextsDataAsyncTask();
         getCyberTextsDataAsyncTask.execute();
-
-
     }
 
     @Override

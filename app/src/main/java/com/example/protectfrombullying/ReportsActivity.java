@@ -12,6 +12,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -94,6 +95,9 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
 
 
         cyberBullyReport = (Button) findViewById(R.id.button_iconCyberbullyTexts);
@@ -172,7 +176,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
                 alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(ReportsActivity.this,"Not Deleted!",Toast.LENGTH_LONG).show();
+
                             }
                         });
                 alertDialog.show();

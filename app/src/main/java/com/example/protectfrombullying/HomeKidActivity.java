@@ -1,5 +1,6 @@
 package com.example.protectfrombullying;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.BroadcastReceiver;
@@ -7,13 +8,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.vistrav.ask.Ask;
 
 import org.json.JSONObject;
 
@@ -24,6 +31,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
 
 public class HomeKidActivity extends AppCompatActivity {
 
@@ -57,6 +68,12 @@ public class HomeKidActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_kid);
 
+        Ask.on(this)
+                .forPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        , Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.CAMERA, Manifest.permission.VIBRATE, Manifest.permission.RECORD_AUDIO)
+                .go();
+
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("timeStampDetails", MODE_PRIVATE);
         SharedPreferences.Editor editTimeStamp = sharedPreferences.edit();
         editTimeStamp.putString("timeStampOfPreviousNotification", "");
@@ -71,9 +88,8 @@ public class HomeKidActivity extends AppCompatActivity {
         qrcodeScannerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeKidActivity.this, KidsQRScanActivity.class);
-                startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                ViewKidAsync viewKidAsync = new ViewKidAsync();
+                viewKidAsync.execute();
             }
         });
 
@@ -114,6 +130,32 @@ public class HomeKidActivity extends AppCompatActivity {
             }
         }
     } */
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.infoshowcase, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.infoshowcaseicon)
+        {
+            new GuideView.Builder(this)
+                    .setTitle("TREE HOLE:")
+                    .setContentText("A virtual tree hole that lets you relief off your pressure. \n Click on 'I want to talk' to talk to the tree hole and it will listen.\n Once you are done, you will get to talk to Winnie - the Emotional Companion!")
+                    .setTargetView(treeHoleButton)
+                    .setGravity(Gravity.center)
+                    .setContentTextSize(12)
+                    .setTitleTypeFace(Typeface.DEFAULT_BOLD)
+                    .setTitleTextSize(14)
+                    .setDismissType(DismissType.outside) //optional - default dismissible by TargetView
+                    .build()
+                    .show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public class Receiver extends BroadcastReceiver {
 
@@ -272,6 +314,30 @@ public class HomeKidActivity extends AppCompatActivity {
             intent.putExtra("kidId", kidId);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
+    }
+
+    private class ViewKidAsync extends AsyncTask<String, Void, List<Kids>> {
+
+        @Override
+        protected List<Kids> doInBackground(String... args) {
+
+            return database.kidsDAO().getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<Kids> kids) {
+
+            if(kids.size() == 0)
+            {
+                Intent intent = new Intent(HomeKidActivity.this, KidsQRScanActivity.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Already scanned!", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.roughike.swipeselector.SwipeItem;
@@ -57,6 +58,9 @@ public class PreventionActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Menu menu = navigation.getMenu();
+        MenuItem menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
 
         swipeSelector1 = (SwipeSelector) findViewById(R.id.swipeSelector1);
         swipeSelector2 = (SwipeSelector) findViewById(R.id.swipeSelector2);

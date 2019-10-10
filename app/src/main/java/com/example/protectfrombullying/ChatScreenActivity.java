@@ -361,7 +361,7 @@ public class ChatScreenActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 downloadUrl = uri;
-                                Toast.makeText(getApplicationContext(), "Downloaded URI", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Taken Care of!", Toast.LENGTH_LONG).show();
                                 PostAudioURIAsync postAudioURIAsync = new PostAudioURIAsync();
                                 postAudioURIAsync.execute();
                             }

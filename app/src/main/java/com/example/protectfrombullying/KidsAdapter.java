@@ -75,9 +75,9 @@ public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.KidsViewHolder
                                 //set icon
                                 .setIcon(android.R.drawable.ic_dialog_alert)
                                 //set title
-                                .setTitle("Are you sure to Delete?")
+                                .setTitle("Are you sure you want to Remove?")
                                 //set message
-                                .setMessage("Deleting your kid will delete all the records.")
+                                .setMessage("Removing your kid will delete all the records.")
                                 //set positive button
                                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
