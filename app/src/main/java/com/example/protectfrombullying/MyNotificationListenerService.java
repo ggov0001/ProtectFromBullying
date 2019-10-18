@@ -31,9 +31,13 @@ public class MyNotificationListenerService extends NotificationListenerService {
             SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("timeStampDetails", MODE_PRIVATE);
             SharedPreferences.Editor editTimeStamp = sharedPreferences.edit();
 
+            long currentTime = statusBarNotification.getNotification().when;
+            long previousTime = sharedPreferences.getLong("timeStampOfPreviousNotification",0);
+
+
             //Allow to proceed only if the time stamp of the current notifications doesnt match with previous
             //To avoid repeatation of same notification being captured
-            if(! String.valueOf(statusBarNotification.getNotification().when).equals(sharedPreferences.getString("timeStampOfPreviousNotification","")))
+            if(currentTime - previousTime >= 2000)
             {
                 String pack = statusBarNotification.getPackageName();
                 String ticker = (String) statusBarNotification.getNotification().tickerText;
@@ -42,7 +46,7 @@ public class MyNotificationListenerService extends NotificationListenerService {
                 String title = extras.getString("android.title");
                 String text = extras.getCharSequence("android.text").toString();
 
-                editTimeStamp.putString("timeStampOfPreviousNotification", String.valueOf(statusBarNotification.getNotification().when));
+                editTimeStamp.putLong("timeStampOfPreviousNotification", currentTime);
                 editTimeStamp.apply();
 
                 Log.i("SBN Time stamp:", String.valueOf(statusBarNotification.getNotification().when));

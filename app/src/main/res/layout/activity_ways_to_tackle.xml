@@ -39,19 +39,6 @@
                     android:gravity="center"
                     android:background="@drawable/waystotackle">
 
-                    <TextView
-                        android:layout_height="310dp"
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:text="WAYS TO TACKLE"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-condensed" />
-
-
-
                 </LinearLayout>
 
                 <LinearLayout

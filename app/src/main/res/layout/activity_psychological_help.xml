@@ -42,19 +42,6 @@
                     android:gravity="center"
                     android:background="@drawable/psychologicalhelp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:gravity="center"
-                        android:text="PSYCHOLOGICAL HELP"
-                        android:textColor="#ffff"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-condensed" />
-
-
-
                 </LinearLayout>
 
                 <com.roughike.swipeselector.SwipeSelector

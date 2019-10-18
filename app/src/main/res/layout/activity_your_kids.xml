@@ -14,16 +14,6 @@
         android:gravity="center"
         android:background="@drawable/yourkids">
 
-        <TextView
-            android:layout_height="310dp"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:text="YOUR KIDS"
-            android:textColor="#000"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            app:fontFamily="sans-serif-condensed" />
 
     </LinearLayout>
 

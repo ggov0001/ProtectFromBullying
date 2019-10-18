@@ -93,7 +93,7 @@ public class KidsQRScanActivity extends AppCompatActivity implements ZXingScanne
         @Override
         protected void onPostExecute(List<Kids> kids) {
             //HomeKidActivity.check.setText(kids.get(0).getKidName());
-            Toast.makeText(getApplicationContext(), "Thanks! Welcome " + kids.get(0).getKidName() + ".", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Welcome " + kids.get(0).getKidName() + " !", Toast.LENGTH_LONG).show();
             //isDone = true;
             Intent intent = new Intent(KidsQRScanActivity.this, HomeKidActivity.class);
             startActivity(intent);

@@ -135,7 +135,7 @@
                                     android:id="@+id/imageView_iconIdentities"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/iconbarchart"
+                                    android:src="@drawable/identity"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView

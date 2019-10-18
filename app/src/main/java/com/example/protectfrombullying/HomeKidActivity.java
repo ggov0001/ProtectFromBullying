@@ -35,6 +35,7 @@ import java.util.List;
 import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 
 public class HomeKidActivity extends AppCompatActivity {
 
@@ -76,7 +77,8 @@ public class HomeKidActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("timeStampDetails", MODE_PRIVATE);
         SharedPreferences.Editor editTimeStamp = sharedPreferences.edit();
-        editTimeStamp.putString("timeStampOfPreviousNotification", "");
+        editTimeStamp.putLong("timeStampOfPreviousNotification", 0);
+        editTimeStamp.putLong("previousdatetimeposted", 0);
         editTimeStamp.apply();
 
         qrcodeScannerButton = (Button) findViewById(R.id.button_qrcode);
@@ -142,17 +144,35 @@ public class HomeKidActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.infoshowcaseicon)
         {
+
             new GuideView.Builder(this)
-                    .setTitle("TREE HOLE:")
-                    .setContentText("A virtual tree hole that lets you relief off your pressure. \n Click on 'I want to talk' to talk to the tree hole and it will listen.\n Once you are done, you will get to talk to Winnie - the Emotional Companion!")
-                    .setTargetView(treeHoleButton)
+                    .setTitle("SCAN QR CODE:")
+                    .setContentText("Scan the QR code from your parent's phone. \n Once scanned, please ensure to give NOTIFICATION ACCESS to NoBully 24/7.\n Navigate to 'Settings > Notification Access > ' in your phone to grant the access.")
+                    .setTargetView(qrcodeScannerButton)
                     .setGravity(Gravity.center)
                     .setContentTextSize(12)
                     .setTitleTypeFace(Typeface.DEFAULT_BOLD)
                     .setTitleTextSize(14)
-                    .setDismissType(DismissType.outside) //optional - default dismissible by TargetView
+                    .setDismissType(DismissType.outside)
+                    .setGuideListener(new GuideListener() {
+                        @Override
+                        public void onDismiss(View view) {
+                            new GuideView.Builder(HomeKidActivity.this)
+                                    .setTitle("TREE HOLE:")
+                                    .setContentText("A virtual tree hole that lets you relief off your pressure. \n Click on 'I want to talk' to talk to the tree hole and it will listen.\n Once you are done, you will get to talk to Winnie - the Emotional Companion!")
+                                    .setTargetView(treeHoleButton)
+                                    .setGravity(Gravity.center)
+                                    .setContentTextSize(12)
+                                    .setTitleTypeFace(Typeface.DEFAULT_BOLD)
+                                    .setTitleTextSize(14)
+                                    .setDismissType(DismissType.outside) //optional - default dismissible by TargetView
+                                    .build()
+                                    .show();
+                        }
+                    })
                     .build()
                     .show();
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -207,7 +227,7 @@ public class HomeKidActivity extends AppCompatActivity {
                 }
             }
 
-            Toast.makeText(getApplicationContext(), "Received from " + pack, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Received from " + pack, Toast.LENGTH_LONG).show();
 
             if(pack.equals("Text Message") || pack.equals("Instagram") || pack.equals("Facebook Messenger") ||
             pack.equals("Whatsapp"))
@@ -244,7 +264,7 @@ public class HomeKidActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(String kidId) {
-                Toast.makeText(getApplicationContext(), "Done Posting!", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "Received!", Toast.LENGTH_LONG).show();
             }
 
         }
@@ -253,48 +273,55 @@ public class HomeKidActivity extends AppCompatActivity {
         //Rest method to post the report
         public void postNotificationContent(String kidId) {
 
-        //    kidId = "5Cvk5aotND";
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("timeStampDetails", MODE_PRIVATE);
+            SharedPreferences.Editor editTimeStamp = sharedPreferences.edit();
+
+            //    kidId = "5Cvk5aotND";
             URL url = null;
             HttpURLConnection conn = null;
 
-            try {
-                url = new URL("https://nobully-247.appspot.com/api");
-                conn = (HttpURLConnection) url.openConnection(); //opening the connection
-                conn.setReadTimeout(10000);
-                conn.setConnectTimeout(15000);
+            //Current date and time
+            Date date = Calendar.getInstance().getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
-                conn.setRequestMethod("POST"); //Connection method is set to POST
+            if (date.getTime() - sharedPreferences.getLong("previousdatetimeposted", 0) >=2000) {
+                try {
+                    url = new URL("https://nobully-247.appspot.com/api");
+                    conn = (HttpURLConnection) url.openConnection(); //opening the connection
+                    conn.setReadTimeout(10000);
+                    conn.setConnectTimeout(15000);
 
-                conn.setDoOutput(true); //output to true
-                conn.setRequestProperty("Content-Type", "application/json"); //headers
+                    conn.setRequestMethod("POST"); //Connection method is set to POST
+
+                    conn.setDoOutput(true); //output to true
+                    conn.setRequestProperty("Content-Type", "application/json"); //headers
 
 
-                //Current date and time
-                Date date = Calendar.getInstance().getTime();
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                    //post data
+                    JSONObject jsonParam = new JSONObject();
+                    jsonParam.put("kidID", kidId);
+                    jsonParam.put("platform", pack);
+                    jsonParam.put("sender", title);
+                    jsonParam.put("text", text);
+                    jsonParam.put("datetime", formatter.format(date));
 
+                    editTimeStamp.putLong("previousdatetimeposted", date.getTime());
+                    editTimeStamp.apply();
 
-                //post data
-                JSONObject jsonParam = new JSONObject();
-                jsonParam.put("kidID", kidId);
-                jsonParam.put("platform", pack);
-                jsonParam.put("sender", title);
-                jsonParam.put("text", text);
-                jsonParam.put("datetime", formatter.format(date));
+                    Log.i("JSON", jsonParam.toString());
 
-                Log.i("JSON", jsonParam.toString());
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    //os.writeBytes(URLEncoder.encode(String.valueOf(jsonParam), "UTF-8"));
+                    os.writeBytes(jsonParam.toString());
+                    os.flush();
+                    os.close();
 
-                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                //os.writeBytes(URLEncoder.encode(String.valueOf(jsonParam), "UTF-8"));
-                os.writeBytes(jsonParam.toString());
-                os.flush();
-                os.close();
-
-                Log.i("error", new Integer(conn.getResponseCode()).toString());
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                conn.disconnect();
+                    Log.i("error", new Integer(conn.getResponseCode()).toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    conn.disconnect();
+                }
             }
         }
 

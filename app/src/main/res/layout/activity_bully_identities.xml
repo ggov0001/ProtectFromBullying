@@ -12,11 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/blue"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
-        android:typeface="sans"
         app:fontFamily="sans-serif-condensed" />
 
     <TextView

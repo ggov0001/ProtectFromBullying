@@ -38,29 +38,8 @@
                     android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/parenttalk">
+                    android:background="@drawable/wholestory">
 
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:gravity="center"
-                        android:text="THE WHOLE STORY"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-condensed" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:gravity="center"
-                        android:text="Follow all these guidelines"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-light" />
 
                 </LinearLayout>
 

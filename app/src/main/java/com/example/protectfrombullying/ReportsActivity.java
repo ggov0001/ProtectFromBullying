@@ -144,6 +144,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
         emailReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final AlertDialog alerDialogForEmail;
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(ReportsActivity.this)
                         //set icon
                         .setIcon(android.R.drawable.ic_dialog_email)
@@ -168,10 +169,10 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
                 alertDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                updateEmail(emailIdSet);
 
                             }
                         });
+
                         //set negative button
                 alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
@@ -179,7 +180,28 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
 
                             }
                         });
-                alertDialog.show();
+
+                alerDialogForEmail = alertDialog.create();
+
+                alerDialogForEmail.show();
+
+                //Listener for 'Confirm'
+                alerDialogForEmail.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!(emailIdSet.getText().toString().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")))
+                        {
+                            emailIdSet.setError("Please enter a valid email address.");
+                            emailIdSet.requestFocus();
+                        }
+                        else {
+                            alerDialogForEmail.cancel();
+                            updateEmail(emailIdSet);
+                        }
+                    }
+                });
+
+
             }
         });
 
@@ -255,12 +277,12 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
 
     private void updateEmail(EditText emailIdEditText)
     {
-        if(!(emailIdEditText.getText().toString().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))) {
-            emailIdEditText.setError("Please enter a valid email address.");
-            emailIdEditText.requestFocus();
-        }
-        else
-        {
+//        if(!(emailIdEditText.getText().toString().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"))) {
+//            emailIdEditText.setError("Please enter a valid email address.");
+//            emailIdEditText.requestFocus();
+//        }
+//        else
+//        {
             if(parentList.size() == 0)
             {
                 AddEmailIdtoDatabase addEmailIdtoDatabase = new AddEmailIdtoDatabase();
@@ -271,7 +293,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
                 UpdateEmailInDatabase updateEmailInDatabase = new UpdateEmailInDatabase();
                 updateEmailInDatabase.execute(emailIdEditText.getText().toString());
             }
-        }
+        //}
     }
 
     //Add email id
@@ -318,6 +340,7 @@ public class ReportsActivity extends AppCompatActivity implements AdapterView.On
         }
         @Override
         protected void onPostExecute(String emailId) {
+
             Toast.makeText(ReportsActivity.this,"Email Sent!",Toast.LENGTH_LONG).show();
         }
     }

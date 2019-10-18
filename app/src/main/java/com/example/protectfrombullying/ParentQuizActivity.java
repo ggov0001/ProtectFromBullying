@@ -80,6 +80,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     scoreForTheQuiz += 0;
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });
@@ -99,6 +100,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     scoreForTheQuiz += 2.5;
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });
@@ -118,6 +120,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     scoreForTheQuiz += 5;
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });
@@ -137,6 +140,7 @@ public class ParentQuizActivity extends AppCompatActivity {
                     scoreForTheQuiz += 7.5;
                     sendQuizResult.putExtra("Result", scoreForTheQuiz);
                     startActivity(sendQuizResult);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });

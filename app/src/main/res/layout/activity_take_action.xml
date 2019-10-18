@@ -42,28 +42,6 @@
                     android:gravity="center"
                     android:background="@drawable/takeaction">
 
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:gravity="center"
-                        android:text="TAKE ACTION"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-condensed" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:gravity="center"
-                        android:text="Follow all these guidelines"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-light" />
-
                 </LinearLayout>
 
                 <LinearLayout

@@ -38,21 +38,11 @@
                 <LinearLayout
                     android:id="@+id/linearViewID"
                     android:layout_width="match_parent"
-                    android:layout_height="255dp"
+                    android:layout_height="300dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/parenttalk">
+                    android:background="@drawable/illegalconduct">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="255dp"
-                        android:gravity="center"
-                        android:text="CYBERBULLYING IS A CRIME IN THE FOLLOWING CASES"
-                        android:textSize="25dp"
-                        android:textColor="#ffff"
-                        android:textStyle="bold"
-                        android:typeface="normal"
-                        app:fontFamily="sans-serif-condensed" />
 
                 </LinearLayout>
 

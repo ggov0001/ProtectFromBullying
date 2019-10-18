@@ -15,16 +15,6 @@
         android:gravity="center"
         android:background="@drawable/recordings">
 
-        <TextView
-            android:layout_height="260dp"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:text="WHAT YOUR KID SAID.."
-            android:textColor="#000"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            app:fontFamily="sans-serif-condensed" />
 
     </LinearLayout>
 
